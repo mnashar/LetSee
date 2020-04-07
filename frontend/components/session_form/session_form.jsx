@@ -48,23 +48,22 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                     <div className="login-form">
 
-
-                        {/* { renderName(this.props.formType!=='login')} */}
-
-
-
-
+                       
+                       
+                        <div style={{ display: this.props.formType!=='login' ? "block" : "none" }}
+                        >
                         <br />
                         <label>Name:
-              <input type="text"
+                                <input type="text"
                                 value={this.state.name}
                                 onChange={this.update('name')}
                                 className="login-input"
                             />
                         </label>
+                        </div>
 
 
-                        <br />
+                        
                         <label>Email:
               <input type="text"
                                 value={this.state.email}
@@ -88,6 +87,5 @@ class SessionForm extends React.Component {
         );
     }
 }
-
 
 export default SessionForm;
