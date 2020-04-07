@@ -5,15 +5,18 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            name: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
-        return e => this.setState({
+        return e => {
+          return this.setState({
             [field]: e.currentTarget.value
         });
+    }
     }
 
     handleSubmit(e) {
@@ -41,10 +44,24 @@ class SessionForm extends React.Component {
                     Welcome to Letsy!
           <br />
           Please {this.props.formType} or {this.props.navLink}
+          
                     {this.renderErrors()}
                     <div className="login-form">
 
-                      
+
+                        {/* { renderName(this.props.formType!=='login')} */}
+
+
+
+
+                        <br />
+                        <label>Name:
+              <input type="text"
+                                value={this.state.name}
+                                onChange={this.update('name')}
+                                className="login-input"
+                            />
+                        </label>
 
 
                         <br />
@@ -71,5 +88,6 @@ class SessionForm extends React.Component {
         );
     }
 }
+
 
 export default SessionForm;
