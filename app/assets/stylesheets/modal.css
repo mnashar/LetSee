@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.529);
+  z-index: 10;
+}
+
+.modal-child {
+  display: inline-block;
+  width: 35%;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.label-input {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  font-family: 'Spartan', sans-serif;
+  font-size: 20px;
+}
+
+.form-input {
+  outline: none;
+  border-radius: 5px;
+  border: gainsboro 1px solid;
+  margin-top: 5px;
+  margin-left: 16px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  padding: 5px;
+  font-family: 'Spartan', sans-serif;
+  font-size: 15px;
+  width: 91%
+}
+
+.signin-submit {
+  outline: none;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 10px;
+  width: 40%;
+  height: 15%;
+  background-color: black;
+  font-family: 'Spartan', sans-serif;
+  font-size: 15px;
+  color: white;
+}
+
+.signin-submit:hover {
+  cursor: pointer;
+  background-color: rgb(102, 102, 102)
+}
+
+.signup-submit {
+  outline: none;
+  border-radius: 20px;
+  margin: 15px;
+  padding: 10px;
+  width: 20%;
+  height: 15%;
+  background-color: white;
+  border: black 1px solid;
+  font-family: 'Spartan', sans-serif
+}
+
+.signup-submit:hover {
+  cursor: pointer;
+  background-color: rgb(179, 179, 179);
+}
+
+.header-form{ 
+  margin: 20px;
+  font-family: 'Spartan', sans-serif;
+  font-size: 25px;
+}
+
+.close {
+  color: transparent;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.close:hover {
+  cursor: inherit;
+}
+
+.signup-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toast {
+  display: inline-block;
+  width: 10%;
+  height: 10%
+}
+
+.sign-demo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.demo-submit {
+  outline: none;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 10px;
+  width: 40%;
+  height: 15%;
+  background-color: white;
+  font-family: 'Spartan', sans-serif;
+  font-size: 15px;
+  color: black;
+  border: black 1px solid
+}
+
+.demo-submit:hover {
+  cursor: pointer;
+  background-color: rgb(179, 179, 179);
+}

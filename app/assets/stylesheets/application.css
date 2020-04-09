@@ -13,3 +13,86 @@
  *= require_tree .
  *= require_self
  */
+  @import './reset.scss';
+
+.home{
+    width: 100%;
+}
+.nav{
+    /* background-color: red; */
+    border-bottom: 10px black;
+    padding: 20px 0 0 20px;
+    height:100px;
+    width: 100%;
+    display: block;
+    
+}
+
+.logo{
+    color: #F1641E !important;
+    width: 80px;
+    height: 40px;
+    right: 3px !important;
+    top: 1px !important;
+    position: relative;
+    display: block !important;
+    text-decoration: none;
+    font-size: 40px;
+    line-height: 20px;
+    padding-left: 40px;
+    font-weight: normal;
+    font-family: 'Crimson Text', serif;    
+
+}
+
+.header-item button{
+  border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+  font-size: 14px;
+  font-weight: normal;
+    font-family: 'Crimson Text', serif;    
+    line-height: 18px;
+}
+
+.header-item button:hover .sign-in-test:hover{
+  background-color: #E8E8E8;
+}
+
+#header-right .button-divs{
+    position: absolute;
+    right:50px;
+}
+.sign-in-test:hover {
+     background-color: #E8E8E8;
+}
+
+.sign-in-test2:hover {
+     background-color: #E8E8E8;
+}
+.sign-in-test{
+   
+    border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+  font-size: 14px;
+  font-weight: normal;
+    font-family: 'Crimson Text', serif;    
+    line-height: 18px;
+    position: absolute;
+    top: 20px;
+    right:100px;
+  
+}
+
+.sign-in-test2{
+   
+    border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+  font-size: 14px;
+  font-weight: normal;
+    font-family: 'Crimson Text', serif;    
+    line-height: 18px;
+    position: absolute;
+    top: 20px;
+    right:5px;
+  
+}
