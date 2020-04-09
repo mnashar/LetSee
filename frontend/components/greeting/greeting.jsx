@@ -1,25 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.loggedOut = this.loggedOut.bind(this)
+    this.loggedIn = this.loggedIn.bind(this)
+  }
 
 
+  loggedOut() {
+    return (
+      <nav className="splash-nav">
+        <div className="splash">
+          <img className="home" src="https://i.etsystatic.com/6332216/r/il/4e13e2/1517419938/il_fullxfull.1517419938_e4xa.jpg" alt="" />
 
-const Greeting = ({ currentUser, logout }) => {
-  const sessionLinks = () => (
-    <nav className="login-signup">
-      <Link to="/login">Login</Link>
-      &nbsp;or&nbsp;
-      <Link to="/signup">Sign up!</Link>
-    </nav>
-  );
-  const personalGreeting = () => (
-    <hgroup className="header-group">
-      <h2 className="header-name">Hi, {currentUser.name}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
-    </hgroup>
-  );
+      
+        </div>
+       
 
-  return currentUser ? personalGreeting() : sessionLinks();
-};
+      </nav>
+    )
+  }
 
+  loggedIn() {
+    let { currentUser } = this.props
+    return (
+      <div>
+        {/* <div>
+                <img className="contemporary" src="https://toasty-dev.s3-us-west-1.amazonaws.com/contemporary_wall_art.jpg" alt=""/>
+            </div> */}
+        <h2 className="welcome">{`Welcome back, ${currentUser.name}!`}</h2>
+       
+      </div>
+    )
+  }
 
-export default Greeting;
+  render() {
+    let { currentUser } = this.props
+    return currentUser ? this.loggedIn() : this.loggedOut()
+  }
+}
+
+export default Greeting

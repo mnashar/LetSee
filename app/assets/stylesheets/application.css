@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+  @import './reset.scss';
+
+.home{
+    width: 100%;
+}
+
+.logo{
+    color: #F1641E !important;
+    width: 80px;
+    height: 40px;
+    right: 3px !important;
+    top: 1px !important;
+    position: relative;
+    display: block !important;
+    text-decoration: none;
+    font-size: 40px;
+    line-height: 20px;
+    padding-left: 40px;
+    font-weight: normal;
+    font-family: 'Crimson Text', serif;    
+
+}
+
+.header-item button{
+  border-radius: 20px;
+}
+
+.header-item button:hover{
+  background-color: #E8E8E8;
+}
+
+#header-right{
+    position: absolute;
+    right:50px;
+}
