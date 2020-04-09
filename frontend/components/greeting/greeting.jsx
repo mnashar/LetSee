@@ -12,7 +12,7 @@ class Greeting extends React.Component {
 
   loggedOut() {
     return (
-      <nav className="splash-nav">
+    
         <div className="splash">
           <img className="home" src="https://i.etsystatic.com/6332216/r/il/4e13e2/1517419938/il_fullxfull.1517419938_e4xa.jpg" alt="" />
 
@@ -20,7 +20,7 @@ class Greeting extends React.Component {
         </div>
        
 
-      </nav>
+      
     )
   }
 
@@ -31,8 +31,13 @@ class Greeting extends React.Component {
         {/* <div>
                 <img className="contemporary" src="https://toasty-dev.s3-us-west-1.amazonaws.com/contemporary_wall_art.jpg" alt=""/>
             </div> */}
-        <h2 className="welcome">{`Welcome back, ${currentUser.name}!`}</h2>
-       
+        {/* <h2 className="welcome">{`Welcome back, ${currentUser.name}!`}</h2> */}
+        <span class="sign-in-test">You &#8744;</span>  
+        <div className="splash">
+          <img className="home" src="https://i.etsystatic.com/6332216/r/il/4e13e2/1517419938/il_fullxfull.1517419938_e4xa.jpg" alt="" />
+
+
+        </div>
       </div>
     )
   }

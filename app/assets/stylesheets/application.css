@@ -54,7 +54,7 @@
     line-height: 18px;
 }
 
-.header-item button:hover{
+.header-item button:hover .sign-in-test:hover{
   background-color: #E8E8E8;
 }
 
@@ -62,13 +62,37 @@
     position: absolute;
     right:50px;
 }
+.sign-in-test:hover {
+     background-color: #E8E8E8;
+}
 
+.sign-in-test2:hover {
+     background-color: #E8E8E8;
+}
 .sign-in-test{
    
-    
+    border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+  font-size: 14px;
+  font-weight: normal;
+    font-family: 'Crimson Text', serif;    
+    line-height: 18px;
+    position: absolute;
+    top: 20px;
+    right:100px;
+  
+}
+
+.sign-in-test2{
+   
+    border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+  font-size: 14px;
+  font-weight: normal;
+    font-family: 'Crimson Text', serif;    
+    line-height: 18px;
     position: absolute;
     top: 20px;
     right:5px;
-    
   
 }

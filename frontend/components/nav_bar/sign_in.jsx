@@ -18,8 +18,8 @@ const SignIn = ({currentUser, openModal, logout}) => {
 
     let loggedIn = () => {
         return (
-            <Link to="/">
-                <button className="test" onClick={logout}>Logout</button>
+            <Link to="/" className="sign-in-test2">
+                <button  onClick={logout}>Logout</button>
             </Link>
         )
     }
