@@ -1,12 +1,17 @@
-import React from 'react'
-import SignIn from './sign_in'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import SignIn from './sign_in';
+import { Link } from 'react-router-dom';
+import GreetingContainer from '../greeting/greeting_container';
+
 
 const NavBar = ({ currentUser, openModal, logout }) => {
     return(
-        <div>
+        
             <div className="nav">
-               
+                <Link to="/" className="logo">
+                    <h1 >Letsy</h1>
+                </Link>
+                <GreetingContainer />
                 
                     <div className="button-divs">
                        
@@ -18,7 +23,7 @@ const NavBar = ({ currentUser, openModal, logout }) => {
                         />
                     </div>
             </div>
-        </div>
+        
     )
 }
 
