@@ -1,5 +1,12 @@
 require 'faker'
 # 
+user1=User.new(name:"Marwa",email:"msn@aucegypt.edu")
+user1.password="mmmmmm"
+
+user1.save!
+
+
+
 images=[
     "https://i.etsystatic.com/18585293/r/il/501ac2/2203272268/il_1588xN.2203272268_q46p.jpg",
     "https://i.etsystatic.com/18585293/r/il/64032c/1900389225/il_fullxfull.1900389225_sug9.jpg",
@@ -33,8 +40,8 @@ images=[
         name: Faker::Commerce.product_name ,
         description: Faker::Lorem.sentence(word_count:1) ,
         price: Faker::Commerce.price,
-        photourl: images.sample
-        # artist_id: 1
+        photourl: images.sample,
+        artist_id: user1.id
     }])
 end
 
