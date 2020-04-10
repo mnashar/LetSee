@@ -4,5 +4,6 @@ class Product < ApplicationRecord
 
     belongs_to :artist,
     foreign_key: :artist_id,
-    class_name: :User
+    class_name: :User,
+    optional: true
 end
