@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ProductIndexContainer from '../product_index/product_index_container'
+
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -14,8 +16,9 @@ class Greeting extends React.Component {
     return (
     
         <div className="splash">
-          <img className="home" src="https://i.etsystatic.com/6332216/r/il/4e13e2/1517419938/il_fullxfull.1517419938_e4xa.jpg" alt="" />
+          {/* <img className="home" src="https://i.etsystatic.com/6332216/r/il/4e13e2/1517419938/il_fullxfull.1517419938_e4xa.jpg" alt="" /> */}
 
+        {/* <ProductIndexContainer /> */}
       
         </div>
        
@@ -34,8 +37,9 @@ class Greeting extends React.Component {
         {/* <h2 className="welcome">{`Welcome back, ${currentUser.name}!`}</h2> */}
         <span class="sign-in-test">You &#8744;</span>  
         <div className="splash">
-          <img className="home" src="https://i.etsystatic.com/6332216/r/il/4e13e2/1517419938/il_fullxfull.1517419938_e4xa.jpg" alt="" />
+          {/* <img className="home" src="https://i.etsystatic.com/6332216/r/il/4e13e2/1517419938/il_fullxfull.1517419938_e4xa.jpg" alt="" /> */}
 
+          {/* <ProductIndexContainer /> */}
 
         </div>
       </div>

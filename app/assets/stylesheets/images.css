@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+.idx-images {
+    width: 143px;
+    height: 113px;
+    padding: 2px;
+}
+
+.idx-images:hover {
+    background-color: rgb(242, 242, 242);
+}
+
+.show-image {
+    height: 50%;
+    width: 50%;
+    border-radius: 2%;
+    box-shadow: rgb(128, 128, 128);
+    padding-left: 100px;
+    min-width: 450px;
+    max-width: 450px;
+    min-height: 450px;
+    max-height: 450px;
+}
+
+
+.show-div {
+    display: flex;
+    padding: 25px;
+
+}
+
+.info-div {
+    padding: 25px;
+    display: flex;
+    /* flex-basis: 40%; */
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: flex-start; */
+    width: 50%;
+    height: 50%;
+}
+
+.name-product {
+    padding: 10px;
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
+
+.description-product {
+    padding: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
+
+.price-product {
+    padding: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.label-description {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    color: rgb(128, 128, 128);
+    padding: 10px;
+}

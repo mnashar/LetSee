@@ -5,8 +5,9 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 //test
-// import * as SessionApiUtil from './util/session_api_util';
-// import * as SessionActions from './actions/session_actions';
+import * as ProductApiUtil from './util/product_api_util';
+import * as SessionApiUtil from './util/session_api_util';
+import * as SessionActions from './actions/session_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,8 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<Root store={store} />, root);
 
     // for testing only must be deleted
-    // window.getState= store.getState;
-    // window.dispatch=store.dispatch;
+
+
+    window.getState= store.getState;
+    window.dispatch=store.dispatch;
+
+    window.getAllProducts = ProductApiUtil.getAllProducts;
     
     // window.login = SessionApiUtil.login;
     // window.logout = SessionApiUtil.logout;
