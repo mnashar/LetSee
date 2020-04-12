@@ -6,15 +6,21 @@ export const REMOVE_PRODUCT = "REMOVE_PRODUCT"
 export const RECEIVE_PRODUCT_ERRORS = "RECEIVE_PRODUCT_ERRORS"
 
 
-const receiveProduct = (product) => ({
+const receiveProduct = (product) => {
+    
+return {
     type: RECEIVE_PRODUCT,
     product
-})
+};
+}
 
-const receiveProducts = (products) => ({
+const receiveProducts = (products) => {
+   
+    return {
     type: RECEIVE_PRODUCTS,
     products
-})
+};
+}
 
 const removeProduct = productId => ({
     type: REMOVE_PRODUCT,

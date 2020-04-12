@@ -1,9 +1,9 @@
 require 'faker'
 # 
-user1=User.new(name:"Marwa",email:"msn@aucegypt.edu")
-user1.password="mmmmmm"
+# user1=User.new(name:"Marwa",email:"msn@aucegypt.edu")
+# user1.password="mmmmmm"
 
-user1.save!
+# user1.save!
 
 
 
@@ -32,16 +32,29 @@ images=[
     "https://i.etsystatic.com/7605991/r/il/a230c6/1652955739/il_1588xN.1652955739_c6dh.jpg",
     "https://i.etsystatic.com/7605991/r/il/2f1f9d/1772666490/il_1588xN.1772666490_c9o8.jpg",
     "https://i.etsystatic.com/7371176/r/il/fb4831/2119092340/il_1588xN.2119092340_3tjp.jpg",
-    "https://i.etsystatic.com/7371176/r/il/5d58bd/1087967784/il_1588xN.1087967784_h303.jpg"
+    "https://i.etsystatic.com/7371176/r/il/5d58bd/1087967784/il_1588xN.1087967784_h303.jpg",
+    "https://i.etsystatic.com/9363211/r/il/752ec6/2304483875/il_1588xN.2304483875_ijan.jpg",
+    "https://i.etsystatic.com/10396120/r/il/9e264e/1993031320/il_1588xN.1993031320_g2ee.jpg",
+    "https://i.etsystatic.com/22348282/r/il/970cd5/2284371093/il_1588xN.2284371093_sagm.jpg",
+    "https://i.etsystatic.com/17556283/r/il/feb23b/2221879763/il_1588xN.2221879763_m162.jpg",
+    "https://i.etsystatic.com/21117462/r/il/4469f0/2011573806/il_1588xN.2011573806_gf88.jpg",
+    "https://i.etsystatic.com/9234998/r/il/8ec5b2/2000181504/il_1588xN.2000181504_3t6f.jpg",
+    "https://i.etsystatic.com/6903082/r/il/d69bf5/2101041584/il_1588xN.2101041584_lftj.jpg",
+    "https://i.etsystatic.com/6903082/r/il/417991/1825938328/il_1588xN.1825938328_4gzl.jpg",
+    "https://i.etsystatic.com/11821796/r/il/0b3609/2208415008/il_1588xN.2208415008_1ssj.jpg",
+    "https://i.etsystatic.com/6789376/r/il/7fc841/1061243032/il_1588xN.1061243032_wsvs.jpg",
+    "https://i.etsystatic.com/13286268/r/il/af30bc/1875173426/il_1588xN.1875173426_ehq1.jpg",
+    "https://i.etsystatic.com/9425087/r/il/fbbb61/2256687325/il_1588xN.2256687325_hbgm.jpg"
 ]
 
-50.times do
+(0...36).each do |i|
     Product.create!([{
         name: Faker::Commerce.product_name ,
-        description: Faker::Lorem.sentence(word_count:1) ,
+        description: Faker::Lorem.sentence(word_count:100) ,
         price: Faker::Commerce.price,
-        photourl: images.sample,
-        artist_id: user1.id
+        photourl: images[i],
+        artist_id:7
+        # artist_id: user1.id
     }])
 end
 

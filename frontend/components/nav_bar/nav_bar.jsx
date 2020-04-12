@@ -9,8 +9,10 @@ const NavBar = ({ currentUser, openModal, logout }) => {
         
             <div className="nav">
                 <Link to="/" className="logo">
-                    <h1 >Letsy</h1>
+                    <h1 >Letsyyy</h1>
                 </Link>
+
+                
                 <GreetingContainer />
                 
                     <div className="button-divs">
