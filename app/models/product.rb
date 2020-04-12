@@ -6,4 +6,8 @@ class Product < ApplicationRecord
     foreign_key: :artist_id,
     class_name: :User,
     optional: true
+
+    has_many :cart_items, 
+    foreign_key: :product_id,
+    class_name: :CartItem
 end

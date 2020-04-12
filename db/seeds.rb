@@ -47,16 +47,16 @@ images=[
     "https://i.etsystatic.com/9425087/r/il/fbbb61/2256687325/il_1588xN.2256687325_hbgm.jpg"
 ]
 
-(0...36).each do |i|
-    Product.create!([{
-        name: Faker::Commerce.product_name ,
-        description: Faker::Lorem.sentence(word_count:100) ,
-        price: Faker::Commerce.price,
-        photourl: images[i],
-        artist_id:7
-        # artist_id: user1.id
-    }])
-end
+# (0...36).each do |i|
+#     Product.create!([{
+#         name: Faker::Commerce.product_name ,
+#         description: Faker::Lorem.sentence(word_count:100) ,
+#         price: Faker::Commerce.price,
+#         photourl: images[i],
+#         artist_id:7
+#         # artist_id: user1.id
+#     }])
+# end
 
 # photo="https://i.etsystatic.com/18585293/r/il/501ac2/2203272268/il_1588xN.2203272268_q46p.jpg"
 

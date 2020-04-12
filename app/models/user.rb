@@ -11,6 +11,10 @@ class User < ApplicationRecord
   has_many :products_for_sale,
     foreign_key: :artist_id,
     class_name: :Product
+
+    has_many :cart_items, 
+    foreign_key: :customer_id,
+    class_name: :CartItem
     
 #   has_many :favorites
 #   has_many :favorite_benches,
