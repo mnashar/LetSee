@@ -76,6 +76,10 @@
 .sign-in-test2:hover {
      background-color: #E8E8E8;
 }
+
+.shopping_cart_icon:hover{
+  background-color: #E8E8E8;
+}
 .sign-in-test{
    
     border-radius: 20px;
@@ -86,7 +90,7 @@
     line-height: 18px;
     position: absolute;
     top: 20px;
-    right:100px;
+    right:120px;
   
 }
 
@@ -97,9 +101,21 @@
   font-size: 14px;
   font-weight: normal;
     font-family: 'Crimson Text', serif;    
+    /* line-height: 18px; */
+    position: absolute;
+    top: 19px;
+    right:65px;
+  
+}
+
+.shopping_cart_icon{
+  border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+  font-size: 14px;
+  font-weight: normal;
+    font-family: 'Crimson Text', serif;    
     line-height: 18px;
     position: absolute;
     top: 20px;
-    right:5px;
-  
+    right:30px;
 }

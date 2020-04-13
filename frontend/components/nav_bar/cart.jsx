@@ -15,8 +15,12 @@ class Cart extends React.Component {
         
         return (
             <Link to="/cart_items">
-                <button className="btn_black_rounded">
-                   Cart                  </button>
+                <button className="shopping_cart_icon">
+                    {/* <a href="#">
+                        <i class="fa fa-search"></i>
+                        </a>       */}
+                        
+                    <i class="fas fa-shopping-cart"></i>                  </button>
             </Link>
 
             

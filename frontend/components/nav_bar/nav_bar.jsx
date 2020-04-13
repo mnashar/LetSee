@@ -15,10 +15,11 @@ const NavBar = ({ currentUser, openModal, logout }) => {
 
                 
                 <GreetingContainer />
+            <CartContainer />
                 
                     <div className="button-divs">
                        
-                <CartContainer />
+                
                         <SignIn 
                             openModal={openModal}
                             logout={logout}
