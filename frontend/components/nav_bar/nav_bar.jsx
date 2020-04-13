@@ -2,6 +2,7 @@ import React from 'react';
 import SignIn from './sign_in';
 import { Link } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
+import CartContainer from './cart_container'
 
 
 const NavBar = ({ currentUser, openModal, logout }) => {
@@ -17,7 +18,7 @@ const NavBar = ({ currentUser, openModal, logout }) => {
                 
                     <div className="button-divs">
                        
-                        
+                <CartContainer />
                         <SignIn 
                             openModal={openModal}
                             logout={logout}

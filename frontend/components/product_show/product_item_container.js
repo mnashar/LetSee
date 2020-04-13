@@ -7,8 +7,9 @@ import { openModal } from '../../actions/modal_actions'
 
 
 class ProductItemClass extends React.Component{
+    
     constructor(props){
-        
+        debugger;
         super(props)
         this.props.getProduct(this.props.match.params.productId)
     }
@@ -18,6 +19,7 @@ class ProductItemClass extends React.Component{
     }
 
     render() {
+        debugger;
         const { openModal, sessionId, product, createCartItem, cartItem} = this.props
         if (!product) return null
         return (
@@ -33,7 +35,7 @@ class ProductItemClass extends React.Component{
 }
 
 const mapStateToProps = (state, ownProps) => {
-  
+  debugger;
     return {
         product: state.entities.products[ownProps.match.params.productId],
         cartItem: { customer_id: null, product_id: null },

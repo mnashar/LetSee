@@ -16,6 +16,9 @@ class User < ApplicationRecord
     foreign_key: :customer_id,
     class_name: :CartItem
     
+      has_many :products,
+    through: :cart_items,
+    source: :product
 #   has_many :favorites
 #   has_many :favorite_benches,
 #     through: :favorites,

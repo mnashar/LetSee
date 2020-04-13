@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             session: { id: window.currentUser.id },
             entities: {
                 users: { [window.currentUser.id]: window.currentUser }
+                // cartItems: { [window.cartItems] : window.currentUser.cart_items },
             }
         };
         store = configureStore(preloadedState);

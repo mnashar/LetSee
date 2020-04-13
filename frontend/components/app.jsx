@@ -8,7 +8,7 @@ import ProductItemContainer from './product_show/product_item_container'
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-// import CartItemContainer from './cart_items/cart_items_container'
+import CartItemContainer from './cart_items/cart_items_container'
 
 
 
@@ -25,7 +25,7 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <Route exact path="/" component={ProductIndexContainer} />
         <Route exact path="/products/:productId" component={ProductItemContainer} />
-        {/* <ProtectedRoute path="/cart_items" component={CartItemContainer} /> */}
+        <ProtectedRoute path="/cart_items" component={CartItemContainer} />
 
     </div>
 );
