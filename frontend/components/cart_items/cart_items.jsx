@@ -42,12 +42,13 @@ class CartItems extends React.Component {
         let newCartItems = {}
 
         userCartItems.forEach(userCartItem => {
-            
-            if (newCartItems[userCartItem.product.id]) {
-                newCartItems[userCartItem.product.id].quantity += userCartItem.quantity
-            } else {
-                newCartItems[userCartItem.product.id] = { product: userCartItem.product, quantity: userCartItem.quantity, deleteableId: userCartItem.id}
-            }
+            newCartItems[userCartItem.product.id] = { product: userCartItem.product, quantity: userCartItem.quantity, deleteableId: userCartItem.id }
+
+            // if (newCartItems[userCartItem.product.id]) {
+            //     newCartItems[userCartItem.product.id].quantity += userCartItem.quantity
+            // } else {
+            //     newCartItems[userCartItem.product.id] = { product: userCartItem.product, quantity: userCartItem.quantity, deleteableId: userCartItem.id}
+            // }
         })
         
         return newCartItems

@@ -5,7 +5,7 @@ class ProductItem extends React.Component{
         
         super(props) 
         this.state = { quantity: 1 }
-        debugger;
+    
         this.addProductToCart = this.addProductToCart.bind(this)
         
     }
@@ -18,15 +18,21 @@ class ProductItem extends React.Component{
             this.props.openModal()
         }
 
-        debugger;
         this.setState({ quantity: this.state.quantity + 1 })
-
+        
+        debugger;
         this.props.createCartItem({ customer_id: sessionId, product_id: product.id, quantity: this.state.quantity })
+        if (this.state.quantity ==1)
+        {
+        }
+        else{
+            // this.props.updateCartItem({ customer_id: sessionId, product_id: product.id, quantity: this.state.quantity })
+
+        }
     }
 
     render(){
         let { product } = this.props
-        debugger;
         return (
             <div className="show-div">
                 <img className="show-image" src={`${product.photourl}`} alt="" />
