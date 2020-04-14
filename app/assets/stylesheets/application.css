@@ -81,6 +81,24 @@
      background-color: #E8E8E8;
 }
 
+.searchIconDiv{
+     width: 65px;
+    position: relative;
+    left: 520px;
+    top: -60px;
+    /* background-color: tomato; */
+    height: 35px;
+    text-align: center;
+    padding-top: 15px;
+  
+}
+
+.searchIconDiv:hover {
+  /* border-radius: 20px; */
+  border-top-right-radius: 20px;
+   border-bottom-right-radius: 20px;
+     background-color: #E8E8E8;
+}
 .shopping_cart_icon:hover{
   background-color: #E8E8E8;
 }
@@ -200,4 +218,32 @@
 .delete-item-in-cart{
   padding-top: 10px;
   
+}
+.searchDiv{
+  width: 65%;
+    top: 3px;
+    left: 200px;
+    position: absolute;
+}
+
+.searchBar {
+    display: inline-block;
+    margin: 10px;
+    height: 50px;
+    flex-grow: 1;
+    min-width: 84%;
+    border-radius: 25px;
+    border-color: #222;
+    background-color: rgb(241, 243, 244);
+    outline: none;
+    font-family: 'Crimson Text', serif;
+    font-size: 20px;
+    color: rgb(126, 145, 154);
+    padding-left: 18px;
+}
+
+.searchBarIcon{
+  color: black;
+    
+    font-size: 1.3em;
 }
