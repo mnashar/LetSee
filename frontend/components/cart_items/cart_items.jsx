@@ -12,6 +12,7 @@ class CartItems extends React.Component {
         this.uniqueProducts = this.uniqueCartItems.bind(this)
         this.deleteItem = this.deleteItem.bind(this)
         this.total = this.total.bind(this)
+        // this.roundUpp = this.roundUp.bind(this)
     }
 
     componentDidMount(){
@@ -26,8 +27,15 @@ class CartItems extends React.Component {
     }
 
     total(cartItem) {
-        return cartItem[1].product.price * cartItem[1].quantity
+        // return cartItem[1].product.price * cartItem[1].quantity
+        let tot = cartItem[1].product.price * cartItem[1].quantity;
+        let precision=2;
+         precision = Math.pow(10, precision)
+        tot= Math.ceil(tot * precision) / precision
+        return (tot);
     }
+    
+   
 
     uniqueCartItems(){
         let { userCartItems } = this.props
@@ -58,36 +66,73 @@ class CartItems extends React.Component {
     }
  
     render() {
-        let cartItemsObj = Object.entries(this.uniqueCartItems())
+        let cartItemsObj = Object.entries(this.uniqueCartItems());
+        let randomMessages = ["Only 1 available",
+    "Over 20 people have this in their cart",
+"Only 10 available and it's in 9 people's carts",
+"Only 1 available and it's in 2 people's carts",
+""]
         return (
             <div>
-                <h1 className="header">Your Cart</h1>
 
                 <div className="buy-page">
+
+                    <div className="cartContainer">
+                       
+                <h1 className="header">Your Cart</h1>
+
                         <div className="cart-div"> 
                             {cartItemsObj.map(cartItem => {
                                 let product = cartItem[1].product
                                 return (
-                                    <div className="cart-item-div">
-                                        <Link className="public-product-links" to={`/products/${product.id}`}>
-                                            <img className="idx-images" src={product.photourl} alt="" />
-                                            {this.showLess(product.name)}
-                                        </Link>
-                                        <br />
-                                        <div className="quantity">
-                                            <label className="quantity-word">Quantity: </label>
-                                            <div className="quantity-num">{cartItem[1].quantity}</div>
+                                    <div className="cart-item-details">
+
+                                        <div className="cart_item_details_photo">
+                                            <Link className="public-product-links" to={`/products/${product.id}`}>
+                                                <img className="idx-images" src={product.photourl} alt="" />                                    
+                                            </Link>
                                         </div>
-                                        <div className="quantity">
-                                            <div className="quantity-word">Total: </div>
-                                            <div className="quantity-num">${this.total(cartItem)}</div>
+
+                                        <div className="cart_item_details_info">
+                                            <div className="cart_item_title">
+                                                <Link className="public-name_cart_item" to={`/products/${product.id}`}>                                                   
+                                                    {product.name}
+                                                </Link>
+                                                
+
+                                                </div>
+
+                                            <div className="cart_item_title-right">
+                                                <div className="cartItemsSub">
+                                                        <div className="quantity">
+                                                            
+                                                            <div className="quantity-num">{cartItem[1].quantity}</div>
+                                                        </div>
+                                                        <div className="quantity">
+                                                            
+                                                            <div className="public-name">${this.total(cartItem)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                    {/* <div className="randomMessagesCartItem">{randomMessages[Math.floor(Math.random() * items.length)]}</div> */}
+                                                    <div className="randomMessagesCartItem">{randomMessages[Math.floor(Math.random() * randomMessages.length)]}</div>
+                                                   <br></br> <button className="delete-item-in-cart" onClick={() => this.deleteItem(cartItem)}>Remove</button>
+
+                                                    </div>
+                                                </div>
                                         </div>
-                                        <button className="delete-item-in-cart" onClick={() => this.deleteItem(cartItem)}>Delete Item</button>
+
                                     </div>
                                 )}
                             )}
                         </div>
+                
+                    </div>
+                
                 </div>
+
+
+
                 <div className="checkout-div">
                     <button className="checkout">Checkout</button>
                 </div>

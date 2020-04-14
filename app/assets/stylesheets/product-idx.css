@@ -93,6 +93,35 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
 }
+.public-name_cart_item:hover{
+    text-decoration:underline;
+}
+
+.public-name_cart_item{
+     padding-bottom: 2px;
+    color: black;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    
+}
+.cart_item_title{
+    width:200px;
+    
+}
+.cart_item_title-right{
+    width:300px;
+}
+.randomMessagesCartItem{
+     padding-bottom: 2px;
+    color:red;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    padding-top: 10px;
+}
 
 .public-price {
     color: #222;
