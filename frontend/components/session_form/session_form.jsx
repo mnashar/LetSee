@@ -13,8 +13,18 @@ class SessionForm extends React.Component {
         e.preventDefault()
         let user = this.state
 
-        this.props.processForm(user)
+    //    alert('ssssss');
+        this.props.processForm(user).then(this.props.closeModal);
     }
+
+   
+
+
+
+
+
+
+
 
     update(field) {
         return e => this.setState({
@@ -115,9 +125,10 @@ class SessionForm extends React.Component {
                             type="submit"
                             value={this.props.formType}
                         />
+                      {/* mmmmmmmm  */}
                         <button
                             className="demo-submit"
-                            onClick={() => this.props.login({ name: "", email: "wilson@gmail.com", password: "password" })}
+                            onClick={() => this.props.login({ name: "", email: "msn@aucegypt.edu", password: "mmmmmm" })}
                         >Demo User</button>
                     </div>
                 </form>

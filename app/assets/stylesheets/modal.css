@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 .modal-background {
   position: fixed;
@@ -12,9 +14,10 @@
 
 .modal-child {
   display: inline-block;
-  width: 35%;
+  width: 360px;
+  height: 400px;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 3px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,8 +29,10 @@
   margin-left: 15px;
   margin-right: 15px;
   margin-bottom: 5px;
-  font-family: 'Spartan', sans-serif;
-  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 60px;
+  /* font-weight: bolder; */
+  /* xxxx */
 }
 
 .form-input {
@@ -37,27 +42,31 @@
   margin-top: 5px;
   margin-left: 16px;
   margin-right: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   padding: 5px;
   font-family: 'Spartan', sans-serif;
   font-size: 15px;
-  width: 91%
+  width: 87% !important;
+  height:30px;
+  /* margin: 0 auto; */
 }
 
 .signin-submit {
   text-decoration: none;
   outline: none;
-  border-radius: 24px;
+  border-radius: 3px;
   display: inline-block;
   margin: 15px;
   padding: 10px;
-  width: 100% !important;
+  width: 90% !important;
       cursor: pointer;
       outline: none;
   height: 15%;
-  background-color: black;
-  font-family: 'Spartan', sans-serif;
-  font-size: 16px;
+  background-color: #222222;
+  /* font-family: 'Spartan', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight:bolder;
   color: white;
     font-size: 16px;
     font-weight: bold;
@@ -71,6 +80,7 @@
     position: relative;
     text-align: center;
     vertical-align: middle;
+    margin: 0 auto;
     z-index: 10;
 }
 
@@ -88,7 +98,8 @@
   height: 15%;
   background-color: white;
   border: black 1px solid;
-  font-family: 'Spartan', sans-serif
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
 }
 
 .signup-submit:hover {
@@ -98,8 +109,9 @@
 
 .header-form{ 
   margin: 20px;
-  font-family: 'Spartan', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 25px;
+  /* font-weight: bolder; */
 }
 
 .close {
@@ -128,21 +140,42 @@
 
 .sign-demo {
   display: flex;
-  justify-content: space-around;
+  flex-direction:column ;
+  /* justify-content: space-around; */
 }
 
 .demo-submit {
+  text-decoration: none;
   outline: none;
-  border-radius: 5px;
+  border-radius: 3px;
+  display: inline-block;
   margin: 15px;
   padding: 10px;
-  width: 40%;
+  width: 90% !important;
+      cursor: pointer;
+      outline: none;
   height: 15%;
-  background-color: white;
-  font-family: 'Spartan', sans-serif;
-  font-size: 15px;
-  color: black;
-  border: black 1px solid
+  background-color: #222222;
+  /* font-family: 'Spartan', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight:bolder;
+  color: white;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    min-height: 48px;
+    min-width: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-top: 15px;
+    z-index: 10;
 }
 
 .demo-submit:hover {

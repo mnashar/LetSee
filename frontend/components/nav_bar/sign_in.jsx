@@ -6,7 +6,7 @@ const SignIn = ({currentUser, openModal, logout}) => {
         return (
             <div className="header-item" id="header-right">
                 {/* <i class="fas fa-shopping-cart"></i> */}
-                <button className="sign-in-test" onClick={() => (openModal("Sign In"))}>Sign In</button>
+                <button className="sign-in-test" onClick={() => (openModal("Sign In"))}>Sign in</button>
                 
             
             </div>

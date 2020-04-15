@@ -11,10 +11,22 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import CartItemContainer from './cart_items/cart_items_container'
 
 
-
+// this.renderErrors = this.renderErrors.bind(this)
+// let errors=()=>{
+//    return     this.props.errors.map((error, i) => {
+//             return (<li className="errors" key={i}>
+//                 {error}
+//             </li>)
+//         })
+    
+// };
 const App = () => (
+    
     <div>
         <NavBarContainer />
+{/* this.err(); */}
+{/* {this.props.errors} */}
+      
         <Modal />
         {/* <header>
             <script src="https://code.iconify.design/1/1.0.5/iconify.min.js"></script>
