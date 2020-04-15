@@ -20,19 +20,20 @@ class CartItems extends React.Component {
     }
 
     deleteItem(cartItem) {
-        let deleteableId = cartItem[1].deleteableId
+        // let deleteableId = cartItem[1].deleteableId
 
-        this.props.deleteCartItem(deleteableId)
-        this.props.deletedCartItem(deleteableId)
+        this.props.deleteCartItem(cartItem.id)
+        // this.props.deletedCartItem(deleteableId)
     }
 
     total(cartItem) {
-        // return cartItem[1].product.price * cartItem[1].quantity
-        let tot = cartItem[1].product.price * cartItem[1].quantity;
-        let precision=2;
-         precision = Math.pow(10, precision)
-        tot= Math.ceil(tot * precision) / precision
-        return (tot);
+        // let tot = cartItem[1].product.price * cartItem[1].quantity;
+        // let precision=2;
+        //  precision = Math.pow(10, precision)
+        // tot= Math.ceil(tot * precision) / precision
+        // return (tot);
+
+        return 0;
     }
     
    
@@ -67,7 +68,12 @@ class CartItems extends React.Component {
     }
  
     render() {
-        let cartItemsObj = Object.entries(this.uniqueCartItems());
+
+        // const products =this.props.products;
+        const { userCartItems, products } = this.props
+
+
+        // let cartItemsObj = Object.entries(this.uniqueCartItems());
         let randomMessages = ["Only 1 available",
     "Over 20 people have this in their cart",
 "Only 10 available and it's in 9 people's carts",
@@ -83,8 +89,10 @@ class CartItems extends React.Component {
                 <h1 className="header">Your Cart</h1>
 
                         <div className="cart-div"> 
-                            {cartItemsObj.map(cartItem => {
-                                let product = cartItem[1].product
+                            {userCartItems.map(cartItem => {
+                                debugger;
+                                // let product = cartItem[1].product
+                                const product=products[cartItem.product_id];
                                 return (
                                     <div className="cart-item-details">
 
@@ -107,7 +115,7 @@ class CartItems extends React.Component {
                                                 <div className="cartItemsSub">
                                                         <div className="quantity">
                                                             
-                                                            <div className="quantity-num">{cartItem[1].quantity}</div>
+                                                            <div className="quantity-num">{cartItem.quantity}</div>
                                                         </div>
                                                         <div className="quantity">
                                                             

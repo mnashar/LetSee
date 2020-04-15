@@ -5,7 +5,8 @@ import CartItems from './cart_items'
 const mapStateToProps = state => { 
     return ({
     userCartItems: Object.values(state.entities.cartItems),
-    cartItems: Object.values(state.entities.cartItems),
+    // cartItems: Object.values(state.entities.cartItems),
+    products: state.entities.products,
     currentUserId: state.session.id
 })}
 

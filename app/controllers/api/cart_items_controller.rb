@@ -1,7 +1,7 @@
 class Api::CartItemsController < ApplicationController
     def index
         @cart_items = current_user.cart_items
-
+        # debugger;
         render :index
     end
 
@@ -17,6 +17,7 @@ class Api::CartItemsController < ApplicationController
     def destroy
         @cart_item = CartItem.find(params[:id])
         @cart_item.destroy
+        # @cart_items=CartItem.all
         render :show
     end
 

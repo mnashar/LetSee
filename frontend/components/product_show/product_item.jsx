@@ -20,7 +20,7 @@ class ProductItem extends React.Component{
 
         this.setState({ quantity: this.state.quantity + 1 })
         
-        debugger;
+        // debugger;
         this.props.createCartItem({ customer_id: sessionId, product_id: product.id, quantity: this.state.quantity })
         if (this.state.quantity ==1)
         {
