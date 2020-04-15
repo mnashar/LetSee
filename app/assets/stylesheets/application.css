@@ -216,8 +216,26 @@
  
 }
 
+.delete-item-in-cart:hover{
+  background-color: #E8E8E8;
+  text-shadow: 2px 2px 5px gray;
+  /* border: dimgrey solid 1px; */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
 .delete-item-in-cart{
-  padding-top: 10px;
+  /* padding-top: 10px; */
+    border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+   position: relative; 
+   margin-left: -10px;;
+  /* font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 60px;
+    line-height: 18px;
+    position: absolute; */
+    /* top: 20px; */
+    /* right:120px; */
   
 }
 .searchDiv{

@@ -18,7 +18,7 @@ class ProductItem extends React.Component{
             this.props.openModal()
         }
 
-        this.setState({ quantity: this.state.quantity + 1 })
+        this.setState({ quantity: 1 })
         
         // debugger;
         this.props.createCartItem({ customer_id: sessionId, product_id: product.id, quantity: this.state.quantity })
