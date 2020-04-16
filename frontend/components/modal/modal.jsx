@@ -37,7 +37,10 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => {
+        debugger;
+        return dispatch(closeModal())
+    }
 })
 
 

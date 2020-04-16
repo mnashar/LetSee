@@ -39,6 +39,16 @@ export const getAllProducts = () => dispatch => (
         )
 )
 
+export const getSearchProducts = (query) => dispatch => {
+    // debugger;
+    return ProductAPIUtil.getSearchProducts(query)
+        .then(products => {
+            // debugger;
+            return dispatch(receiveProducts(products))},
+            err => dispatch(receiveErrors(err.responseJSON))
+            )      
+}
+
 export const getProduct = productId => dispatch => {
     return(
     ProductAPIUtil.getProduct(productId)

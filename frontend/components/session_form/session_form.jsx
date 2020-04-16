@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.renderErrors = this.renderErrors.bind(this)
+        this.handleDemoLogin = this.handleDemoLogin.bind(this)
     }
 
     handleSubmit(e) {
@@ -30,6 +31,11 @@ class SessionForm extends React.Component {
         return e => this.setState({
             [field]: e.currentTarget.value
         })
+    }
+
+    handleDemoLogin(){
+        this.props.login({ name: "", email: "msn@aucegypt.edu", password: "mmmmmm" })
+        .then(this.props.closeModal)
     }
 
     renderErrors() {
@@ -128,7 +134,7 @@ class SessionForm extends React.Component {
                       {/* mmmmmmmm  */}
                         <button
                             className="demo-submit"
-                            onClick={() => this.props.login({ name: "", email: "msn@aucegypt.edu", password: "mmmmmm" })}
+                            onClick={this.handleDemoLogin}
                         >Demo User</button>
                     </div>
                 </form>

@@ -1,6 +1,6 @@
 import React from 'react'
 import PublicProductIdxItem from './public_product_item'
-
+import { withRouter } from 'react-router-dom'
 
 class ProductIndex extends React.Component {
     constructor(props){
@@ -8,7 +8,14 @@ class ProductIndex extends React.Component {
     }
 
     componentDidMount(){
-        this.props.getAllProducts()
+       
+        if (this.props.match.params.searchQuery === undefined){
+            this.props.getAllProducts()
+        }
+        else{
+            this.props.getSearchProducts(this.props.match.params.searchQuery);
+        }
+        
     }
 
     render() {
@@ -32,4 +39,4 @@ class ProductIndex extends React.Component {
 
 }
 
-export default ProductIndex
+export default withRouter(ProductIndex);

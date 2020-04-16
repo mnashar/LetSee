@@ -39,9 +39,19 @@ class SearchBar extends React.Component{
     }
     handleSubmit(event) {
         event.preventDefault();
-        this.props.fetchSearchProducts(this.state.searchQuery);
-        this.props.history.push(`/search/${this.state.searchQuery}`);
-        this.setState({ searchQuery: '' });
+        
+        this.props.getSearchProducts(this.state.searchQuery)
+            .then(() => this.props.history.push(`/search/${this.state.searchQuery}`));
+
+        
+
+
+
+
+
+
+        // this.props.history.push('/cart_items');
+        // this.setState({ searchQuery: '' });
 
         // let val = (document.getElementById("inputSearchText")).value;
         // this.setState({ searchQuery: val}, () => {
