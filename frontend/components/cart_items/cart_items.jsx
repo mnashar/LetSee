@@ -1,5 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import payment from './payment.png';
+
+
+
 
 class CartItems extends React.Component {
     constructor(props) {
@@ -12,6 +16,7 @@ class CartItems extends React.Component {
         this.uniqueProducts = this.uniqueCartItems.bind(this)
         this.deleteItem = this.deleteItem.bind(this)
         this.total = this.total.bind(this)
+        this.calculateTotalPrice = this.calculateTotalPrice.bind(this);
         // this.roundUpp = this.roundUp.bind(this)
     }
 
@@ -27,29 +32,45 @@ class CartItems extends React.Component {
     }
 
     total(cartItem) {
+        // debugger;
+
+        let price = this.props.products[cartItem.product_id].price;
+        let tot = price * cartItem.quantity;
+        let precision = 2;
+        precision = Math.pow(10, precision)
+        tot = Math.ceil(tot * precision) / precision
+        return (tot);
+
+
+        // return 0;
+
         // let tot = cartItem[1].product.price * cartItem[1].quantity;
         // let precision=2;
         //  precision = Math.pow(10, precision)
         // tot= Math.ceil(tot * precision) / precision
         // return (tot);
 
-        return 0;
+        // return 0;
     }
     
+
    
 
     uniqueCartItems(){
         let { userCartItems } = this.props
         let newCartItems = {}
 
+        // debugger;
         userCartItems.forEach(userCartItem => {
-            newCartItems[userCartItem.product.id] = { product: userCartItem.product, quantity: userCartItem.quantity, deleteableId: userCartItem.id }
+            // newCartItems[userCartItem.product.id] = 
+            // { product: userCartItem.product, quantity: userCartItem.quantity, deleteableId: userCartItem.id }
 
-            // if (newCartItems[userCartItem.product.id]) {
-            //     newCartItems[userCartItem.product.id].quantity += userCartItem.quantity
-            // } else {
-            //     newCartItems[userCartItem.product.id] = { product: userCartItem.product, quantity: userCartItem.quantity, deleteableId: userCartItem.id}
-            // }
+            if (newCartItems[userCartItem.product.id]) {
+                newCartItems[userCartItem.product.id].quantity += userCartItem.quantity
+            } else {
+                newCartItems[userCartItem.product.id] = 
+            { product: userCartItem.product, quantity: userCartItem.quantity, deleteableId: userCartItem.id}
+            }
         })
         
         return newCartItems
@@ -67,13 +88,64 @@ class CartItems extends React.Component {
         }
     }
  
+
+    calculateTotalPrice(userCartItems, products ) {
+        
+        let price = 0;
+        let itemss=0;
+        userCartItems.forEach(item => {
+            price += (item.quantity * products[item.product_id].price)
+            itemss += item.quantity
+        });
+       
+        return [price, itemss];
+
+    }
+
+
+
     render() {
 
         // const products =this.props.products;
         const { userCartItems, products } = this.props
 
+        
+        let cartTotal=0;
+        let totalItems=0;
+        let cartSummary=[0,0];
+        if (userCartItems){
+            cartSummary = this.calculateTotalPrice(userCartItems, products );
+            cartTotal = cartSummary[0];
+            totalItems = cartSummary[1];
+        }
+        let cartsHeader ="Your cart is empty";
+        if (totalItems!==0){
+            cartsHeader = totalItems+" items in your cart";
+        }
 
         // let cartItemsObj = Object.entries(this.uniqueCartItems());
+
+        // let summarizedCartItems = {};
+
+        // summarizedCartItems= userCartItems.forEach(cartItem => {
+           
+        //     if (summarizedCartItems[cartItem.product_id]) {
+        //         summarizedCartItems[cartItem.product_id].quantity += cartItem.quantity
+        //     } else {
+        //         summarizedCartItems[cartItem.product_id] =
+        //             { product_id: cartItem.product_id, quantity: cartItem.quantity, deleteableId: cartItem.id }
+        //     }
+        // }
+        // );
+        // let price = this.props.products[cartItem.product_id].price;
+        // let tot = price * cartItem.quantity;
+        // let precision = 2;
+        // precision = Math.pow(10, precision)
+        // tot = Math.ceil(tot * precision) / precision
+        // return (tot);
+// mmmm
+
+
         let randomMessages = ["Only 1 available",
     "Over 20 people have this in their cart",
 "Only 10 available and it's in 9 people's carts",
@@ -86,11 +158,11 @@ class CartItems extends React.Component {
 
                     <div className="cartContainer">
                        
-                <h1 className="header">Your Cart</h1>
+                        <h1 className="checkout-title-total">{totalItems} items in your cart</h1>
 
                         <div className="cart-div"> 
                             {userCartItems.map(cartItem => {
-                                debugger;
+                                // debugger;
                                 // let product = cartItem[1].product
                                 const product=products[cartItem.product_id];
                                 return (
@@ -142,9 +214,33 @@ class CartItems extends React.Component {
 
 
 
+               
+
+
                 <div className="checkout-div">
-                    <button className="checkout">Checkout</button>
+                    <div className="checkout-totals-div">
+                        {/* <img className="payment" src="./payment.png" alt="payment" /> */}
+                        <h2 className="checkout-title">{cartsHeader}</h2>
+                        <img className="payment" src={paymentImage} alt="payment" />
+                        <br></br>
+                        {/* <img className="payment" src={require('./payment.png')} alt="payment" /> */}
+                      
+                      <div className="div-totals">
+                        <span><strong className="public-totals">Item(s) total </strong></span>
+                        <span><strong className="public-totals">$ {cartTotal}</strong></span>
+                        </div>
+
+                    </div>
+                    
+                    <span className="shipping-text"><i className="fas fa-shipping-fast style='margin-right:20px'"></i>  Get shipping cost</span>
+                    <button className="checkout-btn">Proceed to checkout</button>
+
                 </div>
+
+                
+
+
+
             </div>
         )
     }

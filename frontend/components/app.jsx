@@ -9,6 +9,8 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import CartItemContainer from './cart_items/cart_items_container'
+// import SearchProductsContainer from './search/search_products_container';
+
 
 
 // this.renderErrors = this.renderErrors.bind(this)
@@ -36,6 +38,13 @@ const App = () => (
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <Route exact path="/" component={ProductIndexContainer} />
+        {/* <Route exact path='/search/:searchQuery' component={ProductIndexContainer} /> */}
+
+
+        {/* <Route exact path='/search/:searchQuery' component={SearchProductsContainer} /> */}
+        <Route exact path='/search/:searchQuery' component={ProductIndexContainer} />
+
+
         <Route exact path="/products/:productId" component={ProductItemContainer} />
         <ProtectedRoute path="/cart_items" component={CartItemContainer} />
 

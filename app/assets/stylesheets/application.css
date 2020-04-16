@@ -223,6 +223,9 @@
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
+
+
+
 .delete-item-in-cart{
   /* padding-top: 10px; */
     border-radius: 20px;
@@ -237,6 +240,34 @@
     /* top: 20px; */
     /* right:120px; */
   
+}
+
+.checkout-btn{
+   border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+   position: relative; 
+   /* margin-left: -10px;; */
+   font-size: 16px;
+    
+    line-height: 1.5;
+    min-height: 48px;
+    min-width: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    background-color: black;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+.checkout-btn:hover{
+  background-color: #E8E8E8;
+  
+  border: dimgrey solid 1px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 .searchDiv{
   width: 65%;
@@ -265,4 +296,81 @@
   color: black;
     
     font-size: 1.3em;
+}
+
+div.checkout-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: absolute;
+    top:185px;
+    right:35px;
+    width:300px;
+    height:300px;
+        border-radius: 18px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
+        padding: 18px !important;
+        box-sizing: border-box;
+       
+            color: #222;
+            background-color: white;
+    font-size: 14px;
+    line-height: 1.4;
+    z-index: 100;
+}
+
+.checkout-totals-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.checkout-title{
+  font-size: 16px;
+    line-height: 28px;  
+    padding-top: 0px !important;
+    margin-bottom: 20px !important;
+    /* font-weight: bold; */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+}
+.checkout-title-total{
+  
+    line-height: 28px;  
+    padding-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    /* padding-top: 0px !important;
+    margin-bottom: 20px !important; */
+    /* font-weight: bold; */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 20px!important;
+}
+
+
+
+
+.div-totals{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.public-totals{
+     padding-bottom: 2px;
+    color: black;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    
+}
+.shipping-text:hover{
+  text-decoration: underline;
+}
+
+.payment{
+  width:100% ;
 }
