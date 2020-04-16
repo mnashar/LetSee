@@ -1,4 +1,5 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
 
 class ProductItem extends React.Component{
     constructor(props) {
@@ -20,15 +21,9 @@ class ProductItem extends React.Component{
 
         this.setState({ quantity: 1 })
         
-        // debugger;
         this.props.createCartItem({ customer_id: sessionId, product_id: product.id, quantity: this.state.quantity })
-        if (this.state.quantity ==1)
-        {
-        }
-        else{
-            // this.props.updateCartItem({ customer_id: sessionId, product_id: product.id, quantity: this.state.quantity })
-
-        }
+        
+        this.props.history.push('/cart_items');
     }
 
     render(){
@@ -51,4 +46,4 @@ class ProductItem extends React.Component{
     }
 }
 
-export default ProductItem
+export default withRouter(ProductItem);

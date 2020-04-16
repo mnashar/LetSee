@@ -244,15 +244,15 @@
 
 .checkout-btn{
    border-radius: 20px;
-  padding: 8px 10px 8px 10px;
+ 
    position: relative; 
    /* margin-left: -10px;; */
    font-size: 16px;
-    
+    margin-top: 10px;
     line-height: 1.5;
     min-height: 48px;
     min-width: 48px;
-    padding-top: 12px;
+    padding-top: 10px;
     padding-bottom: 12px;
     padding-left: 18px;
     padding-right: 18px;
@@ -264,10 +264,12 @@
     font-family: 'Open Sans', sans-serif;
 }
 .checkout-btn:hover{
-  background-color: #E8E8E8;
+  /* background-color: #E8E8E8; */
   
-  border: dimgrey solid 1px;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  /* border: dimgrey solid 1px; */
+   min-height: 52px;
+    min-width: 52px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .searchDiv{
   width: 65%;

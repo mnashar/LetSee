@@ -1,5 +1,8 @@
+
 import React from 'react';
-import { browserHistory, Router, Route } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
+
+
 import { Provider } from 'react-redux';
 import Modal from './modal/modal'
 import NavBarContainer from './/nav_bar/nav_bar_container'
@@ -11,17 +14,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import CartItemContainer from './cart_items/cart_items_container'
 // import SearchProductsContainer from './search/search_products_container';
 
-
-
-// this.renderErrors = this.renderErrors.bind(this)
-// let errors=()=>{
-//    return     this.props.errors.map((error, i) => {
-//             return (<li className="errors" key={i}>
-//                 {error}
-//             </li>)
-//         })
-    
-// };
 const App = () => (
     
     <div>
@@ -30,11 +22,7 @@ const App = () => (
 {/* {this.props.errors} */}
       
         <Modal />
-        {/* <header>
-            <script src="https://code.iconify.design/1/1.0.5/iconify.min.js"></script>
-            <title>Letsys</title>
-           
-        </header> */}
+       
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <Route exact path="/" component={ProductIndexContainer} />

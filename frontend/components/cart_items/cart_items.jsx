@@ -17,6 +17,9 @@ class CartItems extends React.Component {
         this.deleteItem = this.deleteItem.bind(this)
         this.total = this.total.bind(this)
         this.calculateTotalPrice = this.calculateTotalPrice.bind(this);
+        
+        this.reduceCartItems = this.reduceCartItems.bind(this);
+        this.roundItUp = this.roundItUp.bind(this);
         // this.roundUpp = this.roundUp.bind(this)
     }
 
@@ -32,25 +35,19 @@ class CartItems extends React.Component {
     }
 
     total(cartItem) {
-        // debugger;
-
-        let price = this.props.products[cartItem.product_id].price;
+       let price = this.props.products[cartItem.product_id].price;
         let tot = price * cartItem.quantity;
         let precision = 2;
         precision = Math.pow(10, precision)
         tot = Math.ceil(tot * precision) / precision
         return (tot);
+    }
 
-
-        // return 0;
-
-        // let tot = cartItem[1].product.price * cartItem[1].quantity;
-        // let precision=2;
-        //  precision = Math.pow(10, precision)
-        // tot= Math.ceil(tot * precision) / precision
-        // return (tot);
-
-        // return 0;
+    roundItUp(num) {
+        let precision = 2;
+        precision = Math.pow(10, precision)
+        return Math.ceil(num * precision) / precision
+        
     }
     
 
@@ -102,6 +99,22 @@ class CartItems extends React.Component {
 
     }
 
+    reduceCartItems(userCartItems,products){
+        let newCartItems=[];
+        userCartItems.forEach(item => {
+            // price += (item.quantity * products[item.product_id].price)
+            // itemss += item.quantity
+
+            if (newCartItems[item.product_id]) {
+                debugger;
+                newCartItems[item.product_id].quantity += item.quantity
+            } else {
+                newCartItems[item.product_id] =
+                    { id: item.id, customer_id:item.customer_id, quantity: item.quantity,product_id:item.product_id, deleted: false }
+            }
+        });
+        return newCartItems;
+    }
 
 
     render() {
@@ -115,13 +128,17 @@ class CartItems extends React.Component {
         let cartSummary=[0,0];
         if (userCartItems){
             cartSummary = this.calculateTotalPrice(userCartItems, products );
-            cartTotal = cartSummary[0];
+            cartTotal = this.roundItUp(cartSummary[0]);
             totalItems = cartSummary[1];
         }
         let cartsHeader ="Your cart is empty";
         if (totalItems!==0){
             cartsHeader = totalItems+" items in your cart";
         }
+
+        // tttt
+       
+        let reducedCartItems = this.reduceCartItems(userCartItems,products)
 
         // let cartItemsObj = Object.entries(this.uniqueCartItems());
 
@@ -161,7 +178,10 @@ class CartItems extends React.Component {
                         <h1 className="checkout-title-total">{totalItems} items in your cart</h1>
 
                         <div className="cart-div"> 
-                            {userCartItems.map(cartItem => {
+                            {/* {userCartItems.map(cartItem => { */}
+                            {reducedCartItems.map(cartItem => {
+
+                                //reducedCartItems
                                 // debugger;
                                 // let product = cartItem[1].product
                                 const product=products[cartItem.product_id];
@@ -233,8 +253,8 @@ class CartItems extends React.Component {
                     </div>
                     
                     <span className="shipping-text"><i className="fas fa-shipping-fast style='margin-right:20px'"></i>  Get shipping cost</span>
-                    <button className="checkout-btn">Proceed to checkout</button>
-
+                  <div> <button className="checkout-btn">Proceed to checkout</button>
+                    </div> 
                 </div>
 
                 
