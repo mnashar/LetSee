@@ -102,9 +102,7 @@ class CartItems extends React.Component {
     reduceCartItems(userCartItems,products){
         let newCartItems=[];
         userCartItems.forEach(item => {
-            // price += (item.quantity * products[item.product_id].price)
-            // itemss += item.quantity
-
+           
             if (newCartItems[item.product_id]) {
                 // debugger;
                 newCartItems[item.product_id].quantity += item.quantity
@@ -139,28 +137,6 @@ class CartItems extends React.Component {
         // tttt
        
         let reducedCartItems = this.reduceCartItems(userCartItems,products)
-
-        // let cartItemsObj = Object.entries(this.uniqueCartItems());
-
-        // let summarizedCartItems = {};
-
-        // summarizedCartItems= userCartItems.forEach(cartItem => {
-           
-        //     if (summarizedCartItems[cartItem.product_id]) {
-        //         summarizedCartItems[cartItem.product_id].quantity += cartItem.quantity
-        //     } else {
-        //         summarizedCartItems[cartItem.product_id] =
-        //             { product_id: cartItem.product_id, quantity: cartItem.quantity, deleteableId: cartItem.id }
-        //     }
-        // }
-        // );
-        // let price = this.props.products[cartItem.product_id].price;
-        // let tot = price * cartItem.quantity;
-        // let precision = 2;
-        // precision = Math.pow(10, precision)
-        // tot = Math.ceil(tot * precision) / precision
-        // return (tot);
-// mmmm
 
 
         let randomMessages = ["Only 1 available",
