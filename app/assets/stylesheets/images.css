@@ -48,10 +48,24 @@
     font-size: 14px;
 }
 
+.name-product-title{
+    padding: 10px;
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 28px;
+    color:#444;
+    font-weight: lighter;
+}
+
 .description-product {
     padding: 10px;
     font-family: 'Quicksand', sans-serif;
     font-size: 14px;
+
+        font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    color: #444;
 }
 
 .price-product {

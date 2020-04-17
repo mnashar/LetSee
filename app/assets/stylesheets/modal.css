@@ -51,6 +51,44 @@
   /* margin: 0 auto; */
 }
 
+.add-to-cart:hover {
+  cursor: pointer;
+  background-color: rgb(102, 102, 102)
+}
+.add-to-cart{
+  text-decoration: none;
+  outline: none;
+  border-radius: 24px;
+  display: inline-block;
+  margin: 15px;
+  padding: 10px;
+  width: 90% !important;
+      cursor: pointer;
+      outline: none;
+  height: 15%;
+  background-color: #222222;
+  /* font-family: 'Spartan', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight:bolder;
+  color: white;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    min-height: 48px;
+    min-width: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
 .signin-submit {
   text-decoration: none;
   outline: none;
