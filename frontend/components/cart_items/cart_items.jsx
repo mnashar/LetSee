@@ -106,7 +106,7 @@ class CartItems extends React.Component {
             // itemss += item.quantity
 
             if (newCartItems[item.product_id]) {
-                debugger;
+                // debugger;
                 newCartItems[item.product_id].quantity += item.quantity
             } else {
                 newCartItems[item.product_id] =
