@@ -1,3 +1,6 @@
+
+
+
 INSERT INTO public.products ("name",description,photourl,string,price,artist_id,created_at,updated_at) VALUES 
 ('Enormous Paper Gloves','Suscipit quaerat quibusdam architecto.','https://i.etsystatic.com/7371176/r/il/5d58bd/1087967784/il_1588xN.1087967784_h303.jpg',NULL,43.64,1,'2020-04-09 20:50:10.930','2020-04-09 20:50:10.930')
 ,('Gorgeous Aluminum Plate','Totam repudiandae et voluptatum.','https://i.etsystatic.com/7605991/r/il/2f1f9d/1772666490/il_1588xN.1772666490_c9o8.jpg',NULL,2.41,1,'2020-04-09 20:50:10.936','2020-04-09 20:50:10.936')
