@@ -1,7 +1,6 @@
 //React
 import React from 'react';
 import ReactDOM from 'react-dom';
-//Components
 import Root from './components/root';
 import configureStore from './store/store';
 //test
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<Root store={store} />, root);
 
     // for testing only must be deleted
-
 
     // window.getState= store.getState;
     // window.dispatch=store.dispatch;

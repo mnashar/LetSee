@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import payment from './payment.png';
-
 
 
 
@@ -20,7 +18,6 @@ class CartItems extends React.Component {
         
         this.reduceCartItems = this.reduceCartItems.bind(this);
         this.roundItUp = this.roundItUp.bind(this);
-        // this.roundUpp = this.roundUp.bind(this)
     }
 
     componentDidMount(){
@@ -28,10 +25,7 @@ class CartItems extends React.Component {
     }
 
     deleteItem(cartItem) {
-        // let deleteableId = cartItem[1].deleteableId
-
         this.props.deleteCartItem(cartItem.id)
-        // this.props.deletedCartItem(deleteableId)
     }
 
     total(cartItem) {
@@ -57,11 +51,7 @@ class CartItems extends React.Component {
         let { userCartItems } = this.props
         let newCartItems = {}
 
-        // debugger;
         userCartItems.forEach(userCartItem => {
-            // newCartItems[userCartItem.product.id] = 
-            // { product: userCartItem.product, quantity: userCartItem.quantity, deleteableId: userCartItem.id }
-
             if (newCartItems[userCartItem.product.id]) {
                 newCartItems[userCartItem.product.id].quantity += userCartItem.quantity
             } else {
@@ -104,7 +94,6 @@ class CartItems extends React.Component {
         userCartItems.forEach(item => {
            
             if (newCartItems[item.product_id]) {
-                // debugger;
                 newCartItems[item.product_id].quantity += item.quantity
             } else {
                 newCartItems[item.product_id] =
@@ -116,11 +105,7 @@ class CartItems extends React.Component {
 
 
     render() {
-
-        // const products =this.props.products;
-        const { userCartItems, products } = this.props
-
-        
+        const { userCartItems, products } = this.props        
         let cartTotal=0;
         let totalItems=0;
         let cartSummary=[0,0];
@@ -134,8 +119,6 @@ class CartItems extends React.Component {
             cartsHeader = totalItems+" items in your cart";
         }
 
-        // tttt
-       
         let reducedCartItems = this.reduceCartItems(userCartItems,products)
 
 
