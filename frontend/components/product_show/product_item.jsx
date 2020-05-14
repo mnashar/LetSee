@@ -2,13 +2,10 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 
 class ProductItem extends React.Component{
-    constructor(props) {
-        
+    constructor(props) {        
         super(props) 
-        this.state = { quantity: 1 }
-    
-        this.addProductToCart = this.addProductToCart.bind(this)
-        
+        this.state = { quantity: 1 }    
+        this.addProductToCart = this.addProductToCart.bind(this)        
     }
 
     addProductToCart(e) {
