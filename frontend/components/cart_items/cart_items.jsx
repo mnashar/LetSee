@@ -137,12 +137,8 @@ class CartItems extends React.Component {
                         <h1 className="checkout-title-total">{totalItems} items in your cart</h1>
 
                         <div className="cart-div"> 
-                            {/* {userCartItems.map(cartItem => { */}
                             {reducedCartItems.map(cartItem => {
 
-                                //reducedCartItems
-                                // debugger;
-                                // let product = cartItem[1].product
                                 const product=products[cartItem.product_id];
                                 return (
                                     <div className="cart-item-details">
@@ -174,7 +170,6 @@ class CartItems extends React.Component {
                                                         </div>
                                                     </div>
                                                     <div>
-                                                    {/* <div className="randomMessagesCartItem">{randomMessages[Math.floor(Math.random() * items.length)]}</div> */}
                                                     <div className="randomMessagesCartItem">{randomMessages[Math.floor(Math.random() * randomMessages.length)]}</div>
                                                    <br></br> <button className="delete-item-in-cart" onClick={() => this.deleteItem(cartItem)}>Remove</button>
 
@@ -198,11 +193,9 @@ class CartItems extends React.Component {
 
                 <div className="checkout-div">
                     <div className="checkout-totals-div">
-                        {/* <img className="payment" src="./payment.png" alt="payment" /> */}
                         <h2 className="checkout-title">{cartsHeader}</h2>
                         <img className="payment" src={paymentImage} alt="payment" />
                         <br></br>
-                        {/* <img className="payment" src={require('./payment.png')} alt="payment" /> */}
                       
                       <div className="div-totals">
                         <span><strong className="public-totals">Item(s) total </strong></span>
@@ -215,10 +208,6 @@ class CartItems extends React.Component {
                   <div> <button className="checkout-btn">Proceed to checkout</button>
                     </div> 
                 </div>
-
-                
-
-
 
             </div>
         )
