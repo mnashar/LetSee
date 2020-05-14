@@ -18,8 +18,6 @@ const App = () => (
     
     <div>
         <NavBarContainer />
-{/* this.err(); */}
-{/* {this.props.errors} */}
       
         <Modal />
        

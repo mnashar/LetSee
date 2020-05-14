@@ -4,7 +4,6 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = { name: "", email: "", password: "" }
-
         this.handleSubmit = this.handleSubmit.bind(this)
         this.renderErrors = this.renderErrors.bind(this)
         this.handleDemoLogin = this.handleDemoLogin.bind(this)
@@ -13,8 +12,6 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         let user = this.state
-
-    //    alert('ssssss');
         this.props.processForm(user).then(this.props.closeModal);
     }
 
