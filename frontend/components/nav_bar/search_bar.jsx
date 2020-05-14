@@ -5,7 +5,7 @@ class SearchBar extends React.Component{
         super();
         
         this.state = {
-            searchQuery: 'wwwwwwwwwww'
+            searchQuery: ''
         };
         this.update = this.update.bind(this);
         this.gotfocus = this.gotfocus.bind(this);

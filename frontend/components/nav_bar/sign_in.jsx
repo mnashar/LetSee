@@ -4,17 +4,11 @@ import { Link } from 'react-router-dom'
 const SignIn = ({currentUser, openModal, logout}) => {
     let loggedOut = () => {
         return (
-            <div className="header-item" id="header-right">
-                {/* <i class="fas fa-shopping-cart"></i> */}
+            <div className="header-item" id="header-right">               
                 <button className="sign-in-test" onClick={() => (openModal("Sign In"))}>Sign in</button>
-                
-            
             </div>
         )
     }
-
-
-
 
     let loggedIn = () => {
         return (
