@@ -5,12 +5,8 @@ import ProductIndex from './product_index'
 
 
 const mapStateToProps = state => {
-    
-    // const products=
     return {
     allProducts: Object.values(state.entities.products)
-
-
 }};
 
 const mapDispatchToProps = dispatch => ({
