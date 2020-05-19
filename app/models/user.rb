@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  name            :string
+#  email           :string
+#  session_token   :string
+#  password_digest :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
 
   attr_reader :password
@@ -16,13 +28,14 @@ class User < ApplicationRecord
     foreign_key: :customer_id,
     class_name: :CartItem
     
-      has_many :products,
+    has_many :products,
     through: :cart_items,
     source: :product
-#   has_many :favorites
-#   has_many :favorite_benches,
-#     through: :favorites,
-#     source: :bench
+
+     has_many :reviews,
+    class_name: "Review",
+    primary_key: :id,
+    foreign_key: :author_id
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
