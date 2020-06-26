@@ -154,8 +154,6 @@ class CartItems extends React.Component {
                                                 <Link className="public-name_cart_item" to={`/products/${product.id}`}>                                                   
                                                     {product.name}
                                                 </Link>
-                                                
-
                                                 </div>
 
                                             <div className="cart_item_title-right">

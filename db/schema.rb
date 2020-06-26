@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2020_05_19_174804) do
     t.index ["item_id"], name: "index_reviews_on_item_id"
   end
 
+  
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
