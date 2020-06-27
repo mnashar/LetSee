@@ -5,13 +5,14 @@ export const fetchReviews = productId => {
     })
 };
 
-export const createReview = (review, productId) => (
-    $.ajax({
+export const createReview = (review, productId) => {
+    debugger;
+  return  $.ajax({
         method: 'POST',
         url: `api/products/${productId}/reviews`,
         data: { review: review }
     })
-);
+}
 
 export const updateResponse = review => (
     $.ajax({
