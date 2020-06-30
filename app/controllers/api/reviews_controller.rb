@@ -3,7 +3,7 @@ class Api::ReviewsController < ApplicationController
      before_action only: [:create, :edit, :delete]
 
     def index 
-        product = Product.find(params[:productId])
+        product = Product.find(params[:product_id])
         @reviews = product.reviews 
         render :index 
     end

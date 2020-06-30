@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy, :show]
     resources :products do
-      resources :reviews, only: [:index, :create]
+      resources :reviews
       collection do
         get :search, to: "products#search", as: "search"
       end

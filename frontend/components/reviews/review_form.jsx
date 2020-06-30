@@ -8,6 +8,7 @@ class ReviewForm extends React.Component {
     super(props);
     this.state = {
       rating: 0,
+      title: "",
       body: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,11 +18,23 @@ class ReviewForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert("ddddd");
     event.preventDefault();
-    debugger;
     this.props.createReview(this.state, this.props.productId);
     this.setState({ rating: 0, title: "", body: "" });
+
+    const reviewForm = document.getElementById("review-form");
+    reviewForm.classList.toggle("hidden");
+    const reviewButton = document.getElementsByClassName("review_buttons");
+    reviewButton[0].innerHTML = "Add review";
+    // if (event.target.innerHTML === "Add review") {
+    //   event.target.innerHTML = "Close form";
+    // } else {
+    //   event.target.innerHTML = "Add review";
+    // }
+
+    
+  
+
   }
 
   changeRating(newRating) {
@@ -56,14 +69,12 @@ class ReviewForm extends React.Component {
         />
 
         <label htmlFor="title">Title</label>
-        <textarea
+        <input
           value={this.state.title}
           id="title"
-          cols="50"
-          rows="1"
           onChange={this.changeTitle}
-        ></textarea>
-        <br></br>
+        ></input>
+
         <label htmlFor="body">Body</label>
         <textarea
           value={this.state.body}
@@ -73,7 +84,7 @@ class ReviewForm extends React.Component {
           onChange={this.changeBody}
         ></textarea>
 
-        <button className="add-to-cart">Submit review</button>
+        <button className="review_buttons">Submit review</button>
       </form>
     );
   }

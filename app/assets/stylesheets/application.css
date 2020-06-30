@@ -376,3 +376,161 @@ div.checkout-div {
 .payment{
   width:100% ;
 }
+
+
+
+/* reviews index  */
+.reviews-index {
+    background: white;
+    margin-left: 348px;
+}
+
+.no-review {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.reviews-index > ul {
+    list-style: none;
+}
+
+.reviews-index > ul > li {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    width: 773px;
+    display: flex;
+    flex-direction: row;
+}
+
+.reviews-index > ul > li > div {
+    padding-left: 50px;
+}
+
+.reviews-index > ul > li img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+ .reviews-index > ul > li a {
+     text-decoration: underline;
+     color: black;
+ }
+
+.review-body {
+    margin-top: 0.7em;
+    /* margin-bottom: 0.7em; */
+}
+
+.star-ratings{
+   /* margin-top: 0.3em; */
+    margin-bottom: 0.5em;
+}
+
+.reviews-index-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.reviews-index-title > span {
+    margin-left: 20px;
+}
+
+
+/* reviews index  */
+
+/* pagination */
+ul.pagination {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+ul.pagination > li {
+    border: 1px solid lightgray;
+    margin-left: 8px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 24px;
+    margin-top: 20px;
+    vertical-align: middle;
+    line-height: 1.9em;
+    color: black;
+    background-color: #EFEFEF;
+}
+
+ul.pagination > li.clicked {
+    
+    background: #A7A7A7;
+}
+/* pagination */
+
+/* review form */
+.hidden {
+    display: none;
+}
+
+/* Button 3d effect */
+.clicky {
+    /** Offset the Position **/
+    position: relative;
+    top: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    /** 3D Block Effect **/
+    /* box-shadow: 0 10px 0 0 #6B2A4A; */
+
+    /** Make it look pretty **/
+    display: block;
+    background: black;
+    color: #eee;
+    padding: 12px 28px;
+    border: 0;
+    cursor: pointer;
+    font-size: 14px;
+    height: 48px;
+    opacity: 0.9;
+    border-radius: 5px;
+    font-weight: bold;
+
+}
+/* Button 3d effect */
+
+.review-section {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-bottom: 20px;
+    width: 40%;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    width:220px;
+    padding-left: 10px;
+}
+
+.review-form > label {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.review-form > input {
+    min-width: 350px;
+    margin-bottom: 10px;
+    border: 1px dotted gray;
+}
+
+.review-form > textarea {
+    min-width: 350px;
+    margin-bottom: 10px;
+    border: 1px dotted gray;
+}
+
+
+/* review form */
