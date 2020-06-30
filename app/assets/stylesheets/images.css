@@ -14,7 +14,7 @@
 .show-image {
     height: 50%;
     width: 50%;
-    border-radius: 2%;
+    /* border-radius: 2%; */
     box-shadow: rgb(128, 128, 128);
     padding-left: 100px;
     min-width: 450px;
@@ -23,6 +23,21 @@
     max-height: 450px;
 }
 
+.review-form_pagination{
+    
+    padding-top: 30px;
+    padding-left: 100px;
+    min-width: 450px;
+    max-width: 450px;
+    /* min-height: 450px;
+    max-height: 450px; */
+}
+
+.review-form_pagination>ul>li{
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
 
 .show-div {
     display: flex;
