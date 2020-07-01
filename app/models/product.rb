@@ -31,4 +31,6 @@ class Product < ApplicationRecord
     class_name: "Review",
     primary_key: :id,
     foreign_key: :item_id
+
+    belongs_to :category
 end
