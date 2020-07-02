@@ -23,15 +23,24 @@ class PublicProductIdxItem extends React.Component {
     render() {
         let { product } = this.props
         return (
+          
             <div className="idx-item-div">
-                <Link className="public-product-links" to={`/products/${product.id}`}>
-                    <img className="idx-images" src={`${product.photourl}`} alt="" /> 
-                   
-                    {this.shortensTitle(product.name)}
-                    <h3 className="public-price">${product.price}</h3>
-                </Link>
+              <Link
+                className="public-product-links"
+                to={`/products/${product.id}`}
+              >
+                <img
+                  className="idx-images"
+                  src={`${product.photourl}`}
+                  alt=""
+                />
+
+                {this.shortensTitle(product.name)}
+                <h3 className="public-price">${product.price}</h3>
+              </Link>
             </div>
-        )
+         
+        );
     }
 }
 

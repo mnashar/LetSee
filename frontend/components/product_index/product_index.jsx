@@ -23,14 +23,16 @@ class ProductIndex extends React.Component {
             <div>
                 <ul className="grid-container">
                     {this.props.allProducts.map((product) => {
-                        return(
+                        return (
+                          <li key={"productLi_" + product.id}>
                             <div className="grid-item">
-                                <PublicProductIdxItem
-                                    product={product}
-                                    key={product.id}
-                                />
+                              <PublicProductIdxItem
+                                product={product}
+                                key={product.id}
+                              />
                             </div>
-                        )
+                          </li>
+                        );
                     })}
                 </ul>
             </div> 

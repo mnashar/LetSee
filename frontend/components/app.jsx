@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Modal from './modal/modal'
 import NavBarContainer from './/nav_bar/nav_bar_container'
+import CategoryIndexContainer from "./category_index/category_index_container";
 import ProductIndexContainer from './product_index/product_index_container'
 import ProductItemContainer from './product_show/product_item_container'
 import SignUpFormContainer from './session_form/signup_form_container';
@@ -23,6 +24,7 @@ const App = () => (
 
     <AuthRoute exact path="/login" component={LogInFormContainer} />
     <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+    {/* <Route exact path="/" component={CategoryIndexContainer} /> */}
     <Route exact path="/" component={ProductIndexContainer} />
     <Route
       exact
