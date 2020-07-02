@@ -8,16 +8,16 @@
 //     return selectedProducts;
 // }
 
-// export const selectCategoryProducts = (allProducts, categoryId) => {
-//     const selectedProducts = [];
-//     Object.keys(allProducts).forEach(id => {
-//         if (allProducts[id].categoryId == categoryId){
-//             selectedProducts.push(allProducts[id]);
-//         }
-//     });
+export const selectCategoryProducts = (allProducts, categoryId) => {
+    const selectedProducts = [];
+    Object.keys(allProducts).forEach(id => {
+        if (allProducts[id].categoryId == categoryId){
+            selectedProducts.push(allProducts[id]);
+        }
+    });
 
-//     return selectedProducts;
-// }
+    return selectedProducts;
+}
 
 // export const selectAllShops = allShops => {
 //     return Object.keys(allShops).map(id => allShops[id]);
