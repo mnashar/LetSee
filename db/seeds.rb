@@ -1,11 +1,46 @@
 require 'faker'
 # 
+old_users=User.all
+old_users.delete_all
+
+old_reviews=Review.all
+old_reviews.delete_all
+
+old_products=Product.all
+old_products.delete_all
+
+old_cats=Category.all
+old_cats.delete_all
+
 user1=User.new(name:"Marwa",email:"msn@aucegypt.edu")
 user1.password="mmmmmm"
 
 user1.save!
 
+users_num=rand(20)
+(1..20).each do |i|
+    user=User.new(name: Faker::Name.name ,email:Faker::Internet.email)
+    user.password="mmmmmm"
+    user.save!
+end
 
+
+# Faker::Artist.name #=> "Michelangelo"
+#Faker::Name.name      #=> "Christophe Bartell"
+
+#Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+#wana rag3 men wildwood hagblha l otta
+cats=[
+    "Everyday Finds",
+    "Jewelery & Accessories",
+    "Clothing & Shoes",
+    "Home & Living",
+    "Wedding & Party",
+    "Toys & Entertainment",
+    "Art & Collectibles",
+    "Craft Supplies",
+    "Gifts"
+]
 
 images=[
     "https://i.etsystatic.com/18585293/r/il/501ac2/2203272268/il_1588xN.2203272268_q46p.jpg",
@@ -47,16 +82,45 @@ images=[
     "https://i.etsystatic.com/9425087/r/il/fbbb61/2256687325/il_1588xN.2256687325_hbgm.jpg"
 ]
 
-(0...36).each do |i|
-    Product.create!([{
-        name: Faker::Commerce.product_name ,
-        description: Faker::Lorem.sentence(word_count:100) ,
-        price: Faker::Commerce.price,
-        photourl: images[i],
-        # artist_id:7
-        artist_id: user1.id
-    }])
+
+users=User.all
+
+(1..9).each do |i|
+    category=Category.new(name:cats[i-1])
+    category.save!
+
+    (1..4).each do |j|
+        product=
+        Product.new(
+            name: Faker::Commerce.product_name ,
+            description: Faker::Lorem.sentence(word_count:100) ,
+            price: Faker::Commerce.price,
+            photourl: images[((i-1)*4)+j],
+            # artist_id:7
+            artist_id: user1.id,
+            category_id: category.id
+        )
+        product.save!
+        reviews_num=rand(20)
+
+        (1..reviews_num).each do |k|
+            review= Review.new(
+                title: "mmm" ,
+                body: Faker::Lorem.sentence(word_count:rand(10..100)) ,
+                rating: rand(5).to_s ,
+                item_id: product.id,
+                # artist_id:7
+                author_id: users[rand(users.length-1)].id
+            )
+            review.save!
+        end
+
+
+
+
+    end
 end
+
 
 # photo="https://i.etsystatic.com/18585293/r/il/501ac2/2203272268/il_1588xN.2203272268_q46p.jpg"
 

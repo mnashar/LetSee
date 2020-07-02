@@ -8,7 +8,7 @@ import configureStore from './store/store';
 // import * as SessionApiUtil from './util/session_api_util';
 // import * as SessionActions from './actions/session_actions';
 
-import * as ReviewApiUtil from './util/reviews_api_util';
+// import * as ReviewApiUtil from './util/reviews_api_util';
 
 
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                                       // window.getAllProducts = ProductApiUtil.getAllProducts;
                                                       //ReviewApiUtil
-                                                      window.fetchReviews = ReviewApiUtil.fetchReviews;
+                                                    //   window.fetchReviews = ReviewApiUtil.fetchReviews;
 
                                                       // window.login = SessionApiUtil.login;
                                                       // window.logout = SessionApiUtil.logout;
