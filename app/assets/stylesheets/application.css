@@ -294,7 +294,9 @@
     color: rgb(126, 145, 154);
     padding-left: 18px;
 }
-
+.search-products-form{
+  height:60px;
+}
 .searchBarIcon{
   color: black;
     

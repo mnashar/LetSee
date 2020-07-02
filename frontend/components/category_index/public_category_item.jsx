@@ -9,18 +9,18 @@ class PublicCategoryIdxItem extends React.Component {
   }
 
   splitCatName1(str) {
-    var lastIndex = str.indexOf("&");
+    var lastIndex = str.lastIndexOf(" ");
     if (lastIndex !== -1) {
       str =
-        str.substring(0, lastIndex + 1) ;
+        str.substring(0, lastIndex) ;
     }
     return str;
   }
   splitCatName2(str) {
-    var lastIndex = str.indexOf("&");
+    var lastIndex = str.lastIndexOf(" ");
     if (lastIndex !== -1) {
       str =
-       str.substring(lastIndex + 2, str.length);
+       str.substring(lastIndex + 1, str.length);
     }
     else str="";
 
@@ -30,18 +30,26 @@ class PublicCategoryIdxItem extends React.Component {
   render() {
     let { category } = this.props;
     return (
-      
-        <div className="idx-category-div">
+   
+        // <div className="idx-category-div">
           <Link
             id={"cat_" + category.id}
             className="public-category"
             to={`/categories/${category.id}`}
           >
-            {this.splitCatName1(category.name)} <br></br>
-            {this.splitCatName2(category.name)}
+            {/* <span className="underline"> */}
+
+              {this.splitCatName1(category.name)} <br></br>
+              {this.splitCatName2(category.name)}
+
+            {/* </span> */}
+
+
           </Link>
-        </div>
-      
+
+         
+        // </div>
+     
     );
   }
 }
