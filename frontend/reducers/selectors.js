@@ -10,8 +10,9 @@
 
 export const selectCategoryProducts = (allProducts, categoryId) => {
     const selectedProducts = [];
+    // debugger;
     Object.keys(allProducts).forEach(id => {
-        if (allProducts[id].categoryId == categoryId){
+        if (allProducts[id].category_id == categoryId){
             selectedProducts.push(allProducts[id]);
         }
     });

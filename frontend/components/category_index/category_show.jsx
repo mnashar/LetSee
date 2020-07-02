@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadingIcon from '../loading_icon';
+import PublicProductIdxItem from '../product_index/public_product_item'
 
 class CategoryShow extends React.Component {
     componentDidMount(){
@@ -26,29 +26,22 @@ class CategoryShow extends React.Component {
 
     render(){
         let {category, products} = this.props;
-
-        // if (!category || Object.keys(shops).length === 0 || !products){
-        //     return <LoadingIcon/>
-        // }
-
-        const categoryItems = products.map(product => {
-            return (
-                <li key={product.id} onClick={this.toProductPage(product)} >
-                    <img src={product.imageUrls[0]} />
-                    <p>{product.title.slice(0, 35)}...</p>
-                    {/* <p className="category-shop-name">{shops[product.shopId].name}</p> */}
-                    <p>USD {product.price}</p>
-
-                </li>
-            )
-        });
+        
         return (
-            <div className="products-listing" id="category-show">
-                <ul>
-                    {categoryItems}
+                <ul className="grid-container">
+                {products.map(product => {
+                        return (
+                            <li key={"productLi_" + product.id}>
+                                <div className="grid-item">
+                                    <PublicProductIdxItem
+                                        product={product}
+                                        key={product.id}
+                                    />
+                                </div>
+                            </li>
+                        );
+                    })}
                 </ul>
-
-            </div>
         )
     }
 

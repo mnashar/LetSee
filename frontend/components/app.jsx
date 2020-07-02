@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import Modal from './modal/modal'
 import NavBarContainer from './/nav_bar/nav_bar_container'
 import CategoryIndexContainer from "./category_index/category_index_container";
+import CategoryShowContainer from './category_index/category_show_container';
 import ProductIndexContainer from './product_index/product_index_container'
 import ProductItemContainer from './product_show/product_item_container'
 import SignUpFormContainer from './session_form/signup_form_container';
@@ -15,6 +16,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import CartItemContainer from './cart_items/cart_items_container';
 import ReviewIndex from "./reviews/reviews_index_top";
 import ReviewForm from "./reviews/review_form";
+
 
 const App = () => (
   <div>
@@ -32,6 +34,9 @@ const App = () => (
       component={ProductIndexContainer}
     />
     <Route exact path="/products/:productId" component={ProductItemContainer} />
+
+    <Route exact path='/categories/:categoryId' component={CategoryShowContainer} />
+
     <ProtectedRoute path="/cart_items" component={CartItemContainer} />
     <ProtectedRoute
       exact
