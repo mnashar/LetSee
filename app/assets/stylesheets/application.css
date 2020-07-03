@@ -529,10 +529,20 @@ ul.pagination > li.clicked {
     border: 1px dotted gray;
 }
 
+.hidden-div{
+  display: none;
+}
+
 .review-form > textarea {
     min-width: 350px;
     margin-bottom: 10px;
-    border: 1px dotted gray;
+    border-width: 1px;
+    border-style: solid;
+    /* border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195)); */
+    border-color:lightgray;
+    border-image: initial;
+    padding: 7px;
+    border-radius: 2px;
 }
 
 

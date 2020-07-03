@@ -19,6 +19,7 @@ class ReviewForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    
     this.props.createReview(this.state, this.props.productId);
     this.setState({ rating: 0, title: "", body: "" });
 
@@ -26,15 +27,7 @@ class ReviewForm extends React.Component {
     reviewForm.classList.toggle("hidden");
     const reviewButton = document.getElementsByClassName("review_buttons");
     reviewButton[0].innerHTML = "Add review";
-    // if (event.target.innerHTML === "Add review") {
-    //   event.target.innerHTML = "Close form";
-    // } else {
-    //   event.target.innerHTML = "Add review";
-    // }
-
     
-  
-
   }
 
   changeRating(newRating) {
@@ -51,6 +44,7 @@ class ReviewForm extends React.Component {
   changeBody(event) {
     event.preventDefault();
     this.setState({ body: event.target.value });
+    this.setState({ title: event.target.value });
   }
 
   render() {
@@ -68,12 +62,14 @@ class ReviewForm extends React.Component {
           starSpacing="4px"
         />
 
-        <label htmlFor="title">Title</label>
-        <input
-          value={this.state.title}
-          id="title"
-          onChange={this.changeTitle}
-        ></input>
+      <div className="hidden-div">
+          <label htmlFor="title">Title</label>
+          <input
+            value="no title"
+            id="title" 
+            // onChange={this.changeTitle}
+          ></input>
+        </div>
 
         <label htmlFor="body">Body</label>
         <textarea
