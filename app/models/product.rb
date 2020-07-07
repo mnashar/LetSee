@@ -25,7 +25,7 @@ class Product < ApplicationRecord
     foreign_key: :product_id,
     class_name: :CartItem
 
-    has_one_attached :photo
+    has_many_attached :images
 
     has_many :reviews, dependent: :destroy,
     class_name: "Review",
