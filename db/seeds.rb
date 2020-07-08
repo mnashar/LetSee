@@ -1,4 +1,5 @@
 require 'faker'
+require 'open-uri'
 # 
 old_users=User.all
 old_users.delete_all
@@ -7,6 +8,12 @@ old_reviews=Review.all
 old_reviews.delete_all
 
 old_products=Product.all
+
+old_products.each do |old_product|
+    old_product.images.purge
+end
+# product.images.purge
+old_products.delete_all
 old_products.delete_all
 
 old_cats=Category.all
@@ -105,7 +112,7 @@ images=[
     
     ["https://i.etsystatic.com/14484327/r/il/681714/1474113928/il_fullxfull.1474113928_3tyf.jpg",
     "https://i.etsystatic.com/14484327/r/il/681714/1474113928/il_fullxfull.1474113928_3tyf.jpg",
-    "https://i.etsystatic.com/14484327/r/il/8cf3c7/1521356173/il_794xN.1521356173_3e9w.jpg6"
+    "https://i.etsystatic.com/14484327/r/il/8cf3c7/1521356173/il_794xN.1521356173_3e9w.jpg"
 
     ],
     
@@ -290,10 +297,17 @@ images=[
     "https://i.etsystatic.com/15488044/r/il/38f9cc/1432268825/il_794xN.1432268825_mz36.jpg",
     "https://i.etsystatic.com/15488044/r/il/a91de0/1432268867/il_794xN.1432268867_g5yp.jpg"
 
+    ],
+
+    ["https://i.etsystatic.com/12974820/r/il/163cef/1438042316/il_fullxfull.1438042316_o5fd.jpg",
+    "https://i.etsystatic.com/12974820/r/il/368acc/1510955904/il_794xN.1510955904_kc57.jpg",
+    "https://i.etsystatic.com/12974820/r/il/53e4df/1480386641/il_794xN.1480386641_3ph6.jpg",
+    "https://i.etsystatic.com/12974820/r/il/f660bb/1480386025/il_794xN.1480386025_gsn6.jpg",
+    "https://i.etsystatic.com/12974820/r/il/4ce21d/1433129328/il_794xN.1433129328_p19u.jpg"
+
     ]
-    
-    
 ]
+
 # images=[
 #     "https://i.etsystatic.com/18585293/r/il/501ac2/2203272268/il_1588xN.2203272268_q46p.jpg",
 #     "https://i.etsystatic.com/18585293/r/il/64032c/1900389225/il_fullxfull.1900389225_sug9.jpg",
@@ -342,24 +356,45 @@ users=User.all
     category.save!
 
     (1..4).each do |j|
+
+        # puts images[((i-1)*4)+j]
         product=
         Product.new(
             name: Faker::Commerce.product_name ,
             description: Faker::Lorem.sentence(word_count:100) ,
             price: Faker::Commerce.price,
-            photourl: images[((i-1)*4)+j],
+            photourl: images[((i-1)*4)+j][0],
             # artist_id:7
             artist_id: user1.id,
             category_id: category.id
         )
         product.save!
+
+        product_no=((i-1)*4)+j
+
+        images[product_no].each_with_index do |img,img_idx| 
+            
+            starting=img.rindex("/")+1
+            # file_name='product_'+product_no.to_s+'_'+img_idx.to_s+'_'+img[starting..(img.length-1)]
+
+            file_name='product_'+product_no.to_s+'_'+(img_idx+1).to_s+'.jpg'
+
+            file = open(img)
+            product.images.attach(io: file, filename: file_name)
+
+            open('./app/assets/images/products/'+file_name, 'wb') do |webfile|
+                webfile << open(img).read
+            end
+        end
+
+
         reviews_num=rand(20)
 
         (1..reviews_num).each do |k|
             review= Review.new(
                 title: "mmm" ,
                 body: Faker::Lorem.sentence(word_count:rand(10..100)) ,
-                rating: rand(5).to_s ,
+                rating: rand(3..5).to_s ,
                 item_id: product.id,
                 # artist_id:7
                 author_id: users[rand(users.length-1)].id
