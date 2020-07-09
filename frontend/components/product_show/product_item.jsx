@@ -35,17 +35,15 @@ class ProductItem extends React.Component {
     }
   }
 
-//   componentDidMount() {
-//       debugger;
-//     const pageNumbersList = document.getElementsByClassName("page-link");
-//     if (pageNumbersList.length !== 0 && this.state.currentPage === 1) {
-//         pageNumbersList[0].classList.toggle("clicked");
-//     }  
-// }
+  //   componentDidMount() {
+  //       debugger;
+  //     const pageNumbersList = document.getElementsByClassName("page-link");
+  //     if (pageNumbersList.length !== 0 && this.state.currentPage === 1) {
+  //         pageNumbersList[0].classList.toggle("clicked");
+  //     }
+  // }
 
-  afterRender() {
-    
-}
+  afterRender() {}
   showReviewForm(event) {
     let { sessionId } = this.props;
     if (!sessionId) {
@@ -63,6 +61,20 @@ class ProductItem extends React.Component {
     reviewForm.classList.toggle("hidden");
   }
 
+  onSlideChanged(e) {
+    // alert( e.item);
+    // alert( e.slide);
+     const thumbsList = document.getElementsByClassName("thumb");
+
+     // Remove clicked className from other visited page numbers
+     for (let i = 0; i < thumbsList.length; i++) {
+       if (thumbsList[i].classList.contains("thumb-clicked") || i===e.item) {
+         thumbsList[i].classList.toggle("thumb-clicked");
+       }
+     }
+    //  e.target.classList.toggle("thumb-clicked");
+  }
+
   render() {
     let { product } = this.props;
 
@@ -72,27 +84,23 @@ class ProductItem extends React.Component {
       .join(" ");
     productDescription = productDescription + ".";
 
-   
     let thumbItem = (item, i) => (
       <div key={item} className="thumb-container">
         <img
           src={`${item}`}
-          className= {i===0?  "thumb thumb-clicked" : "thumb" }
-        onClick={(e) => {
-                   const thumbsList = document.getElementsByClassName(
-                     "thumb"
-                   );
+          className={i === 0 ? "thumb thumb-clicked" : "thumb"}
+          onClick={(e) => {
+            const thumbsList = document.getElementsByClassName("thumb");
 
-                   // Remove clicked className from other visited page numbers
-                   for (let i = 0; i < thumbsList.length; i++) {
-                     if (thumbsList[i].classList.contains("thumb-clicked")) {
-                       thumbsList[i].classList.toggle("thumb-clicked");
-                     }
-                   }
-                   e.target.classList.toggle("thumb-clicked");
-                   this.Carousel.slideTo(i);
-                 }}
-        
+            // Remove clicked className from other visited page numbers
+            for (let i = 0; i < thumbsList.length; i++) {
+              if (thumbsList[i].classList.contains("thumb-clicked")) {
+                thumbsList[i].classList.toggle("thumb-clicked");
+              }
+            }
+            e.target.classList.toggle("thumb-clicked");
+            this.Carousel.slideTo(i);
+          }}
         />
       </div>
     );
@@ -107,7 +115,7 @@ class ProductItem extends React.Component {
                 items={product.imageUrls.map((img, i) => (
                   <img src={`${img}`} className="show-image" />
                 ))}
-                responsive={true}
+                responsive={false}
                 // autoPlayInterval={2000}
                 autoPlayDirection="rtl"
                 autoPlay={false}
@@ -116,6 +124,7 @@ class ProductItem extends React.Component {
                 disableAutoPlayOnAction={true}
                 dotsDisabled={true}
                 buttonsDisabled={true}
+                onSlideChanged={this.onSlideChanged}
                 ref={(el) => (this.Carousel = el)}
               />
 
