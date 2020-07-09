@@ -419,3 +419,10 @@ end
 #   photourl: "https://i.etsystatic.com/17098314/r/il/050cbe/1992632938/il_fullxfull.1992632938_gqh2.jpg",
 #   price: 0.9321e2,
 #   artist_id: 1
+
+
+
+
+
+# react-star-ratings --save-dev
+# npm install react-alice-carousel --save-dev

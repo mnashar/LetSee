@@ -15,6 +15,7 @@
  */
 /* @import url('./reset.scss'); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import "react-alice-carousel/lib/alice-carousel.css";
 
 .home{
     width: 100%;

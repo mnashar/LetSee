@@ -3,6 +3,8 @@ import {withRouter} from 'react-router-dom'
 import ReviewForm from '../reviews/review_form';
 import ReviewsIndexTop from "../reviews/reviews_index_top";
 import ReviewsIndexPagination from "../reviews/reviews_index_pagination";
+import Slider from '../carousel/slider';
+import AliceCarousel from "react-alice-carousel";
 
 class ProductItem extends React.Component {
   constructor(props) {
@@ -70,10 +72,57 @@ class ProductItem extends React.Component {
       .slice(0, 42)
       .join(" ");
     productDescription = productDescription + ".";
+
+   
+    let thumbItem = (item, i) => (
+      <div key={item} className="thumb-container">
+        <img
+          src={`${item}`}
+          className="thumb"
+        onClick={() => this.Carousel.slideTo(i)}
+        
+        />
+      </div>
+    );
     return (
       <div className="show-div">
-        <div>
-          <img className="show-image" src={`${product.photourl}`} alt="" />
+        <div className="product-left-side">
+          <div className="whole-carousel-container">
+            <nav>{product.imageUrls.map(thumbItem)}</nav>
+            <div>
+              <AliceCarousel
+                id="carousel"
+                items={product.imageUrls.map((img, i) => (
+                  <img src={`${img}`} className="show-image" />
+                ))}
+                responsive={true}
+                // autoPlayInterval={2000}
+                autoPlayDirection="rtl"
+                autoPlay={false}
+                fadeOutAnimation={true}
+                mouseTrackingEnabled={true}
+                disableAutoPlayOnAction={true}
+                dotsDisabled={true}
+                buttonsDisabled={true}
+                ref={(el) => (this.Carousel = el)}
+              />
+
+              <div className="carousel-buttons-container">
+                <button
+                  className="carousel-button"
+                  onClick={() => this.Carousel.slidePrev()}
+                >
+                  &lt;
+                </button>
+                <button
+                  className="carousel-button"
+                  onClick={() => this.Carousel.slideNext()}
+                >
+                  &gt;
+                </button>
+              </div>
+            </div>
+          </div>
 
           <div className="review-details-section">
             <ReviewsIndexPagination
