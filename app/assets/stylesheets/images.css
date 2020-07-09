@@ -75,6 +75,12 @@
     margin-left: 20px;
     margin-right: 10px;
     border-radius: 8px;
+    opacity: 0.8;
+
+}
+.thumb-clicked{
+    border: 2px solid black;
+    opacity: 1;
 
 }
 

@@ -3,7 +3,6 @@ import {withRouter} from 'react-router-dom'
 import ReviewForm from '../reviews/review_form';
 import ReviewsIndexTop from "../reviews/reviews_index_top";
 import ReviewsIndexPagination from "../reviews/reviews_index_pagination";
-import Slider from '../carousel/slider';
 import AliceCarousel from "react-alice-carousel";
 
 class ProductItem extends React.Component {
@@ -78,8 +77,21 @@ class ProductItem extends React.Component {
       <div key={item} className="thumb-container">
         <img
           src={`${item}`}
-          className="thumb"
-        onClick={() => this.Carousel.slideTo(i)}
+          className= {i===0?  "thumb thumb-clicked" : "thumb" }
+        onClick={(e) => {
+                   const thumbsList = document.getElementsByClassName(
+                     "thumb"
+                   );
+
+                   // Remove clicked className from other visited page numbers
+                   for (let i = 0; i < thumbsList.length; i++) {
+                     if (thumbsList[i].classList.contains("thumb-clicked")) {
+                       thumbsList[i].classList.toggle("thumb-clicked");
+                     }
+                   }
+                   e.target.classList.toggle("thumb-clicked");
+                   this.Carousel.slideTo(i);
+                 }}
         
         />
       </div>
