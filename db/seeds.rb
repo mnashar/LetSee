@@ -29,6 +29,7 @@ users_num=rand(20)
     user=User.new(name: Faker::Name.name ,email:Faker::Internet.email)
     user.password="mmmmmm"
     user.save!
+    # faker.image.avatar();
 end
 
 
