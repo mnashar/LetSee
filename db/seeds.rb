@@ -17,6 +17,9 @@ require 'open-uri'
 
 
 old_users=User.all
+old_users.each do |old_user|
+    old_user.images.purge
+end
 old_users.delete_all
 
 old_reviews=Review.all
@@ -25,7 +28,7 @@ old_reviews.delete_all
 old_products=Product.all
 
 old_products.each do |old_product|
-    old_product.images.purge
+    old_product.profile_pic.purge
 end
 
 old_products.delete_all
@@ -39,14 +42,23 @@ user1.password="mmmmmm"
 user1.photourl="../app/assets/images/users/marwa.jpg"
 
 user1.save!
+file = File.open('app/assets/images/users/marwa.jpg')
+user1.profile_pic.attach(io: file, filename: 'marwa.jpg')
 
 users_num=rand(20)
 (1..20).each do |i|
     user=User.new(name: Faker::Name.name ,email:Faker::Internet.email)
     user.password="mmmmmm"
-    user.photourl="../../../app/assets/images/users/"+i.to_s+".jpg";
+    # user.photourl="../../../app/assets/images/users/"+i.to_s+".jpg";
+
     user.save!
-    # faker.image.avatar();
+    
+        
+    # post = Post.first
+    file = File.open('app/assets/images/users/'+i.to_s+'.jpg')
+    user.profile_pic.attach(io: file, filename: i.to_s+'.jpg')
+    # user.photo.attached? # => true
+
 end
 
 

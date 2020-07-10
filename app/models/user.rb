@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+   has_one_attached :profile_pic
+
   has_many :products_for_sale,
     foreign_key: :artist_id,
     class_name: :Product

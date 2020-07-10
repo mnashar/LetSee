@@ -76,9 +76,9 @@
     position: absolute;
     right:50px;
 }
-.sign-in-test:hover {
-     background-color: #E8E8E8;
-}
+/* .sign-in-test:hover {
+     color: #555;
+} */
 
 .sign-in-test2:hover {
      background-color: #E8E8E8;
@@ -105,17 +105,51 @@
 .shopping_cart_icon:hover{
   background-color: #E8E8E8;
 }
+
+.current-user-container{
+  display:flex;
+    flex-direction: row;
+    justify-items: center;
+    /* justify-content: center; */
+    align-items: center;
+    /* background-color: mediumturquoise; */
+     position: absolute;
+    top: 20px;
+    right:120px;
+      padding:4px 10px 4px 10px;
+      border-radius: 20px;
+
+}
+.current-user-container:hover{
+   
+    background-color: #E8E8E8;
+    
+}
+
+
+
+
+.user-profile-pic{
+  margin-right: 4px;
+  /* margin-top: 10px; */
+    width:25x;
+    height:25px;
+        border-radius: 50% !important;
+    overflow: hidden !important;
+    border-radius: 20px;
+    
+}
+.user-profile-pic:hover{
+  background-color: #E8E8E8;
+}
 .sign-in-test{
    
-    border-radius: 20px;
-  padding: 8px 10px 8px 10px;
+    
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
   font-weight: 60px;
     line-height: 18px;
-    position: absolute;
-    top: 20px;
-    right:120px;
+   
   /* yyyy */
 }
 

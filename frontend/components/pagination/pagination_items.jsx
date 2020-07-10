@@ -3,14 +3,17 @@ import {Link} from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 
 const PaginationItems = ({reviews}) => {
+
     const reviewsLi = reviews.map(review => {
         return (
           <li key={review.id}>
-            <div>
-              <h5>
-                <Link to={`/users/${review.user_id}`}>{review.userName}</Link>
-              </h5>
-              <img src={review.profilePicUrl} alt="user profile picture" />
+            <div className="review-users-container">
+              <img
+                className="review-users"
+                src={review.profilePicUrl}
+                alt="user profile picture"
+              />
+              <span>{review.userName}</span>
             </div>
             <div className="review-body">
               <span>

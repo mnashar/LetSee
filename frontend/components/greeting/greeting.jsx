@@ -28,11 +28,18 @@ class Greeting extends React.Component {
     return (
       <div>
         <h2 className="welcome">{`Welcome back, ${currentUser.name}!`}</h2>
-        <span className="sign-in-test">You &#8744;</span>  
-        <div className="splash">
+
+        <div className="current-user-container">
+          <img
+            className="user-profile-pic"
+            src={currentUser.profilePicUrl}
+            alt="user profile picture"
+          />  
+          <span className="sign-in-test">You &#8744;</span>
         </div>
+        <div className="splash"></div>
       </div>
-    )
+    );
   }
 
   render() {
