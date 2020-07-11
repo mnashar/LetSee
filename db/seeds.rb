@@ -409,3 +409,4 @@ end
 
 # # react-star-ratings --save-dev
 # # npm install react-alice-carousel --save-dev
+# https://www.npmjs.com/package/react-alice-carousel
