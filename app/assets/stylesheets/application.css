@@ -50,7 +50,7 @@
 .welcome{
     font-size: 20px;
     line-height: 28px;  
-    padding-top: 24px !important;
+    /* padding-top: 24px !important; */
     margin-bottom: 25px !important;
     padding-left: 30px;
 }
@@ -142,6 +142,21 @@
 .user-profile-pic:hover{
   background-color: #E8E8E8;
 }
+.sign-in-link{
+   border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 60px;
+    line-height: 18px;
+    position: absolute;
+    top: 20px;
+    right:65px;
+}
+.sign-in-link:hover {
+     background-color: #E8E8E8;
+}
+
 .sign-in-test{
    
     
@@ -359,7 +374,7 @@ div.checkout-div {
             background-color: white;
     font-size: 14px;
     line-height: 1.4;
-    z-index: 100;
+    z-index: 9;
 }
 
 .checkout-totals-div{
@@ -569,7 +584,7 @@ ul.pagination > li.clicked {
 }
 
 .review-form > textarea {
-    min-width: 350px;
+    min-width: 320px;
     margin-bottom: 10px;
     border-width: 1px;
     border-style: solid;

@@ -47,18 +47,20 @@ class ProductItem extends React.Component {
   showReviewForm(event) {
     let { sessionId } = this.props;
     if (!sessionId) {
-      alert("Please login or sign up first!");
-      return;
-    }
+      // alert("Please login or sign up first!");
+      this.props.openModal();
+      // return;
+    } else{
 
-    const reviewForm = document.getElementById("review-form");
-    if (event.target.innerHTML === "Add review") {
-      event.target.innerHTML = "Close form";
-    } else {
-      event.target.innerHTML = "Add review";
-    }
+      const reviewForm = document.getElementById("review-form");
+      if (event.target.innerHTML === "Add review") {
+        event.target.innerHTML = "Close form";
+      } else {
+        event.target.innerHTML = "Add review";
+      }
 
-    reviewForm.classList.toggle("hidden");
+      reviewForm.classList.toggle("hidden");
+    }
   }
 
   onSlideChanged(e) {

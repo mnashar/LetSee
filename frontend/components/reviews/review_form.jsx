@@ -75,7 +75,7 @@ class ReviewForm extends React.Component {
         <textarea
           value={this.state.body}
           id="body"
-          cols="50"
+          cols="40"
           rows="10"
           onChange={this.changeBody}
         ></textarea>

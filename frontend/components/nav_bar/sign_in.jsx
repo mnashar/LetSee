@@ -5,14 +5,14 @@ const SignIn = ({currentUser, openModal, logout}) => {
     let loggedOut = () => {
         return (
             <div className="header-item" id="header-right">               
-                <button className="sign-in-test" onClick={() => (openModal("Sign In"))}>Sign in</button>
+                <button className="sign-in-link" onClick={() => (openModal("Sign In"))}>Sign in</button>
             </div>
         )
     }
 
     let loggedIn = () => {
         return (
-            <Link to="/" className="sign-in-test2">
+            <Link to="/" className="sign-in-link">
                 <button  onClick={logout}>Logout</button>
             </Link>
         )
