@@ -14,8 +14,12 @@ const NavBar = ({ currentUser, openModal, logout }) => {
           <Link to="/" className="logo">
             <h1>Letsyyy</h1>
           </Link>
+          
+          <div className="searchDiv">
+            <SearchBarContainer />
+          </div>
 
-          <CartContainer />
+          <GreetingContainer />
 
           <div className="button-divs">
             <SignIn
@@ -24,12 +28,10 @@ const NavBar = ({ currentUser, openModal, logout }) => {
               currentUser={currentUser}
             />
           </div>
+          <CartContainer />
         </div>
-        <div className="searchDiv">
-          <SearchBarContainer />
-        </div>
+
         <CategoryIndexContainer />
-        <GreetingContainer />
       </>
     );
 }

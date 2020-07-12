@@ -23,25 +23,30 @@
 .nav{
     /* background-color: red; */
     border-bottom: 10px black;
-    padding: 20px 0 0 20px;
+    padding: 20px 20px 0 20px;
     height:50px;
     /* width: 100%; */
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
     
 }
 
 .logo{
     color: #F1641E !important;
-    width: 80px;
-    height: 40px;
+    /* width: 80px;
+    height: 40px; marmar */
     right: 3px !important;
     top: 1px !important;
-    position: relative;
-    display: block !important;
+    /* position: relative; */
+    /* display: block !important; */
     text-decoration: none;
     font-size: 40px;
     line-height: 20px;
-    padding-left: 40px;
+    padding-left: 15px;
+    padding-right: 5px;
     font-weight: normal;
     font-family: 'Crimson Text', serif;    
 
@@ -61,24 +66,22 @@
   font-size: 14px;
   font-weight: normal;
     font-family: 'Crimson Text', serif;    
-    line-height: 18px;
+    /* line-height: 18px; marmar */
 }
 .header{
   padding-bottom: 20px;
 }
 
-.header-item button:hover .sign-in-test:hover{
+.header-item button:hover .current-user:hover{
   background-color: #E8E8E8;
  
 }
 
 #header-right .button-divs{
-    position: absolute;
-    right:50px;
+   /* position: absolute;
+     right:50px; marmar */
 }
-/* .sign-in-test:hover {
-     color: #555;
-} */
+
 
 .sign-in-test2:hover {
      background-color: #E8E8E8;
@@ -86,13 +89,20 @@
 
 .searchIconDiv{
      width: 65px;
-    position: relative;
-    left: 520px;
-    top: -60px;
+     margin-left: -70px;
+     margin-top: 10px;
+     /* height: 100% */
+    /*position: relative;
+     left: 520px;
+    top: -60px; marmar */
     /* background-color: tomato; */
-    height: 35px;
+    /* height: 35px; */
     text-align: center;
-    padding-top: 15px;
+    /* padding-top: 15px; */
+    /* background-color: salmon; */
+    height: 50px;
+  line-height: 50px;
+    text-align: center;
   
 }
 
@@ -101,6 +111,7 @@
   border-top-right-radius: 20px;
    border-bottom-right-radius: 20px;
      background-color: #E8E8E8;
+      /* background-color:rosybrown; */
 }
 .shopping_cart_icon:hover{
   background-color: #E8E8E8;
@@ -109,13 +120,13 @@
 .current-user-container{
   display:flex;
     flex-direction: row;
-    justify-items: center;
+    justify-content: space-between;
     /* justify-content: center; */
     align-items: center;
     /* background-color: mediumturquoise; */
-     position: absolute;
-    top: 20px;
-    right:120px;
+     /* position: absolute; marmar */
+    /* top: 20px;
+    right:120px; marmar */
       padding:4px 10px 4px 10px;
       border-radius: 20px;
 
@@ -147,24 +158,40 @@
   padding: 8px 10px 8px 10px;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
-  font-weight: 60px;
-    line-height: 18px;
-    position: absolute;
+  /* font-weight: 60px;  marmar */
+    /* line-height: 18px;  marmar */
+    /* position: absolute;
     top: 20px;
-    right:65px;
+    right:65px; marmar */
 }
 .sign-in-link:hover {
      background-color: #E8E8E8;
 }
 
-.sign-in-test{
+.sign-out-link{
+   border-radius: 20px;
+  /* padding: 8px 20px 8px 10px; */
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  margin-right: 30px;
+  /* font-weight: 60px;  marmar */
+    /* line-height: 18px;  marmar */
+    /* position: absolute;
+    top: 20px;
+    right:65px; marmar */
+}
+.sign-out-link:hover {
+     background-color: #E8E8E8;
+}
+
+.current-user{
    
     
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
   font-weight: 60px;
     line-height: 18px;
-   
+   white-space:nowrap;
   /* yyyy */
 }
 
@@ -177,8 +204,8 @@
     font-family: 'Crimson Text', serif;    
     /* line-height: 18px; */
     position: absolute;
-    top: 19px;
-    right:65px;
+    /* top: 19px;
+    right:65px; marmar */
   
 }
 
@@ -188,10 +215,10 @@
   font-size: 14px;
   font-weight: normal;
     font-family: 'Crimson Text', serif;    
-    line-height: 18px;
-    position: absolute;
+   /* line-height: 18px;
+     position: absolute; 
     top: 20px;
-    right:30px;
+    right:30px; marmar */
     background-color: white;
 }
 .cart-div{
@@ -324,9 +351,9 @@
 }
 .searchDiv{
   width: 65%;
-    top: 3px;
+    /* top: 3px;
     left: 200px;
-    position: absolute;
+    position: absolute; marmar */
 }
 
 .searchBar {
@@ -345,12 +372,16 @@
     padding-left: 18px;
 }
 .search-products-form{
-  height:60px;
+  /* height:60px; */
+  display: flex;
+  justify-content: space-between;
 }
 .searchBarIcon{
   color: black;
     
     font-size: 1.3em;
+    /* background-color: royalblue; */
+    
 }
 
 div.checkout-div {

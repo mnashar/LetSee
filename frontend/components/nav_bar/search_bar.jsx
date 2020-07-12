@@ -29,8 +29,10 @@ class SearchBar extends React.Component{
     render(){
        
         return(
-            <form onSubmit={this.handleSubmit} className="search-products-form">
-
+            <form onSubmit={this.handleSubmit} 
+            
+            className="search-products-form">
+                
                 <input className="searchBar" id="inputSearchText"
                     onChange={this.update}
                    
@@ -38,11 +40,11 @@ class SearchBar extends React.Component{
                     // value="Search for items"
                     />
 
-
-
-            <div className="searchIconDiv">
-                        <button>   <i className="fas fa-search searchBarIcon"></i></button>
-                    </div>
+                <div className="searchIconDiv">
+                        <button>   
+                            <i className="fas fa-search searchBarIcon"></i>
+                            </button>
+                </div>
             </form>
             )
     }

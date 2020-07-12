@@ -16,7 +16,9 @@ class Cart extends React.Component {
                 <button className="shopping_cart_icon">
                     
                         
-                    <i className="fas fa-shopping-cart"></i>                  </button>
+                    <i className="fas fa-shopping-cart"></i>                  
+                    
+                    </button>
             </Link>
 
             

@@ -27,7 +27,7 @@ class Greeting extends React.Component {
     let { currentUser } = this.props
     return (
       <div>
-        <h2 className="welcome">{`Welcome back, ${currentUser.name}!`}</h2>
+        {/* <h2 className="welcome">{`Welcome back, ${currentUser.name}!`}</h2> */}
 
         <div className="current-user-container">
           <img
@@ -35,7 +35,7 @@ class Greeting extends React.Component {
             src={currentUser.profilePicUrl}
             alt="user profile picture"
           />  
-          <span className="sign-in-test">You &#8744;</span>
+          <span className="current-user">You &#8744;</span>
         </div>
         <div className="splash"></div>
       </div>
