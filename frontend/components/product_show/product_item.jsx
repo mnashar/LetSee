@@ -4,7 +4,7 @@ import ReviewForm from '../reviews/review_form';
 import ReviewsIndexTop from "../reviews/reviews_index_top";
 import ReviewsIndexPagination from "../reviews/reviews_index_pagination";
 import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
+// import "react-alice-carousel/lib/alice-carousel.css";
 
 class ProductItem extends React.Component {
   constructor(props) {
