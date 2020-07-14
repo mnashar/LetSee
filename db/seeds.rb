@@ -18,7 +18,7 @@ require 'open-uri'
 
 old_users=User.all
 old_users.each do |old_user|
-    old_user.images.purge
+    old_user.profile_pic.purge
 end
 old_users.delete_all
 
@@ -28,7 +28,7 @@ old_reviews.delete_all
 old_products=Product.all
 
 old_products.each do |old_product|
-    old_product.profile_pic.purge
+    old_product.images.purge
 end
 
 old_products.delete_all
@@ -111,12 +111,11 @@ images=[
 
     ],
 
-    ["https://i.etsystatic.com/12974820/r/il/163cef/1438042316/il_fullxfull.1438042316_o5fd.jpg",
-    "https://i.etsystatic.com/12974820/r/il/368acc/1510955904/il_794xN.1510955904_kc57.jpg",
-    "https://i.etsystatic.com/12974820/r/il/53e4df/1480386641/il_794xN.1480386641_3ph6.jpg",
-    "https://i.etsystatic.com/12974820/r/il/f660bb/1480386025/il_794xN.1480386025_gsn6.jpg",
-    "https://i.etsystatic.com/12974820/r/il/4ce21d/1433129328/il_794xN.1433129328_p19u.jpg"
-
+    ["https://i.etsystatic.com/22859973/r/il/980f56/2383819898/il_fullxfull.2383819898_8xaj.jpg",
+    "https://i.etsystatic.com/22859973/r/il/4df0df/2431428289/il_794xN.2431428289_dcag.jpg",
+    "https://i.etsystatic.com/22859973/r/il/743eab/2383820020/il_794xN.2383820020_k8jw.jpg",
+    "https://i.etsystatic.com/22859973/r/il/2c11ef/2431428419/il_794xN.2431428419_c5s5.jpg",
+    "https://i.etsystatic.com/22859973/r/il/bfef8c/2383820118/il_794xN.2383820118_qx0s.jpg"
     ],
 
     ["https://i.etsystatic.com/5162299/r/il/cdeb48/1567221375/il_fullxfull.1567221375_384s.jpg",
@@ -371,9 +370,9 @@ users=User.all
             file = open(img)
             product.images.attach(io: file, filename: file_name)
 
-            open('./app/assets/images/products/'+file_name, 'wb') do |webfile|
-                webfile << open(img).read
-            end
+            # open('./app/assets/images/products/'+file_name, 'wb') do |webfile|
+            #     webfile << open(img).read
+            # end
         end
 
 

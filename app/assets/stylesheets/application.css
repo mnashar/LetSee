@@ -31,7 +31,7 @@
 }
 
 .signature-icon{
-  font-size: 2em;
+  font-size: 1.5em;
        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
        color: #F0641E;
        cursor: pointer;
@@ -186,24 +186,18 @@
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  /* width: 120px; */
-  /* background-color: black; */
+  
   color: #000;
   text-align: center;
-  /* border-radius: 6px; */
-  /* padding: 5px 0; */
   
-  /* Position the tooltip */
   position: absolute;
   z-index: 1;
   top: 100%;
-  /* left: 50%; */
+  
   width:200px;
   font-size: 12px;
-  margin-left: -112px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  margin-left: -110px;
+  
   
 }
 
