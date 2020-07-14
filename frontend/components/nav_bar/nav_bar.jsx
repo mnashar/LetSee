@@ -5,7 +5,8 @@ import GreetingContainer from '../greeting/greeting_container';
 import CartContainer from './cart_container'
 import SearchBarContainer from './search_bar_container'
 import CategoryIndexContainer from '../category_index/category_index_container'
-import Signature from '../signature/signature'
+import MetaTag from '../metaTag/metaTag'
+// import Signature from '../signature/signature'
 // import marwa from "./marwa.jpg";
 // import img from "./one.jpeg";
  
@@ -13,6 +14,7 @@ import Signature from '../signature/signature'
 const NavBar = ({ currentUser, openModal, logout }) => {
     return (
       <>
+        <MetaTag />
         <div className="signature-container">
           <a href="https://www.marwaelnashar.com/" target="blank">
             <span className="tooltip">
