@@ -35,13 +35,7 @@ class ProductItem extends React.Component {
     }
   }
 
-  //   componentDidMount() {
-  //       debugger;
-  //     const pageNumbersList = document.getElementsByClassName("page-link");
-  //     if (pageNumbersList.length !== 0 && this.state.currentPage === 1) {
-  //         pageNumbersList[0].classList.toggle("clicked");
-  //     }
-  // }
+  
 
   afterRender() {}
   showReviewForm(event) {

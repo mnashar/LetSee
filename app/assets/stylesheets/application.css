@@ -16,10 +16,33 @@
 /* @import url('./reset.scss'); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 @import "react-alice-carousel/lib/alice-carousel.css";
+/* @import "fontawesome.css"; */
+/* @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"; */
 
 .home{
     width: 100%;
 }
+.signature-container{
+  display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    padding: 20px 40% 0px 40% ;
+}
+
+.signature-icon{
+  font-size: 2em;
+       /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+       color: #F0641E;
+       cursor: pointer;
+   /* text-shadow: 2px 2px 4px #000000; */
+   /* text-shadow: 0 0 5px #fff, 0 0 5px #F0641E; */
+}
+.signature-icon:hover{
+    color: #f1f1f1;
+    text-shadow: 0 0 8px #F0641E, 0 0 8px #F0641E;
+}
+
 .nav{
     /* background-color: red; */
     border-bottom: 10px black;
@@ -139,6 +162,54 @@
 
 
 
+.marwa-top-icon{
+  margin-right: 4px;
+  /* margin-top: 10px; */
+    width:30x;
+    height:30px;
+        border-radius: 4px !important;
+    overflow: hidden !important;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.marwa-top-icon:hover{
+  box-shadow: 0 0 8px #F0641E, 0 0 8px #F0641E;
+  /* text-shadow: 0 0 8px #F0641E, 0 0 8px #F0641E; */
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  /* width: 120px; */
+  /* background-color: black; */
+  color: #000;
+  text-align: center;
+  /* border-radius: 6px; */
+  /* padding: 5px 0; */
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  /* left: 50%; */
+  width:200px;
+  font-size: 12px;
+  margin-left: -112px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 .user-profile-pic{
   margin-right: 4px;
