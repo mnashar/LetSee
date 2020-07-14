@@ -14,15 +14,10 @@ const NavBar = ({ currentUser, openModal, logout }) => {
     return (
       <>
         <div className="signature-container">
-          {/* <span className="tooltip">
-            <img className="marwa-top-icon " src={marwaTopIcon} alt="payment" />
-            <span class="tooltiptext">My website</span>
-          </span> */}
-
           <a href="https://www.marwaelnashar.com/" target="blank">
             <span className="tooltip">
               <i className="fa fa-globe signature-icon" aria-hidden="true"></i>
-              <span class="tooltiptext">My website</span>
+              <span className="tooltiptext">My website</span>
             </span>
           </a>
 
@@ -32,7 +27,7 @@ const NavBar = ({ currentUser, openModal, logout }) => {
                 className="fa fa-linkedin-square signature-icon"
                 aria-hidden="true"
               ></i>
-              <span class="tooltiptext">Linkedin</span>
+              <span className="tooltiptext">Linkedin</span>
             </span>
           </a>
 
@@ -42,14 +37,14 @@ const NavBar = ({ currentUser, openModal, logout }) => {
                 className="fa fa-angellist signature-icon"
                 aria-hidden="true"
               ></i>
-              <span class="tooltiptext">Angel List</span>
+              <span className="tooltiptext">Angel List</span>
             </span>
           </a>
 
           <a href="https://github.com/mnashar" target="blank">
             <span className="tooltip">
               <i className="fa fa-github signature-icon" aria-hidden="true"></i>
-              <span class="tooltiptext">Github</span>
+              <span className="tooltiptext">Github</span>
             </span>
           </a>
         </div>
