@@ -16,7 +16,7 @@
 /* @import url('./reset.scss'); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 /* @import "react-alice-carousel"; */
-@import "react-alice-carousel/lib/alice-carousel.css";
+@import "react-alice-carousel/lib/alice-carousel.scss";
 /* @import "fontawesome.css"; */
 /* @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"; */
 
