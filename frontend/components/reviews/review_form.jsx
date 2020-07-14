@@ -62,11 +62,11 @@ class ReviewForm extends React.Component {
           starSpacing="4px"
         />
 
-      <div className="hidden-div">
+        <div className="hidden-div">
           <label htmlFor="title">Title</label>
           <input
-            value="no title"
-            id="title" 
+            defaultValue="no title"
+            id="title"
             // onChange={this.changeTitle}
           ></input>
         </div>

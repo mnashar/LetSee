@@ -87,15 +87,15 @@ class ProductItem extends React.Component {
           src={`${item}`}
           className={i === 0 ? "thumb thumb-clicked" : "thumb"}
           onClick={(e) => {
-            const thumbsList = document.getElementsByClassName("thumb");
+            // const thumbsList = document.getElementsByClassName("thumb");
 
-            // Remove clicked className from other visited page numbers
-            for (let i = 0; i < thumbsList.length; i++) {
-              if (thumbsList[i].classList.contains("thumb-clicked")) {
-                thumbsList[i].classList.toggle("thumb-clicked");
-              }
-            }
-            e.target.classList.toggle("thumb-clicked");
+            // // Remove clicked className from other visited page numbers
+            // for (let i = 0; i < thumbsList.length; i++) {
+            //   if (thumbsList[i].classList.contains("thumb-clicked")) {
+            //     thumbsList[i].classList.toggle("thumb-clicked");
+            //   }
+            // }
+            // e.target.classList.toggle("thumb-clicked");
             this.Carousel.slideTo(i);
           }}
         />
@@ -112,7 +112,7 @@ class ProductItem extends React.Component {
                 items={product.imageUrls.map((img, i) => (
                   <img src={`${img}`} className="show-image" />
                 ))}
-                responsive={false}
+                // responsive={false}
                 // autoPlayInterval={2000}
                 autoPlayDirection="rtl"
                 autoPlay={false}
